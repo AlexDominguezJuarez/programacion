@@ -4,17 +4,20 @@ import java.util.Scanner;
 
 public class ejercicio16 {
     public static void main(String[] args) {
-        System.out.println("Introduce la base de la figura");
+
+        System.out.println("introduce la cantidad de dinero");
         Scanner in= new Scanner(System.in);
-        double base=in.nextDouble();
-        System.out.println("introduce lam altura de ka figura");
-        double altura=in.nextDouble();
-        System.out.println("pulse 0 si la figura es un cuadrado,pulse 1 si la figura de un rectangulo, pulse 2 si la figura es un triangulo ");
-        String numero=in.next();
-        switch (numero){
-            case "0":
-
-
+        int dinero= in.nextInt();
+        System.out.println("pulse 'e' para pasar a euros y 'd' para pasar a dolares");
+        String decision = in.next();
+        switch (decision){
+            case "d":
+                double dolares=(dinero*1.08);
+                System.out.println("la cantidad introduciuda son "+dolares+" dolares");
+                return;
+            case "e":
+                double euros=(dinero*0.93);
+                System.out.println("la cantidad introducida son "+euros+" euros");
 
         }
     }
