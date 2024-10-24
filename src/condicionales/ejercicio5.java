@@ -1,6 +1,5 @@
-package tema2;
+package condicionales;
 
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class ejercicio5 {
