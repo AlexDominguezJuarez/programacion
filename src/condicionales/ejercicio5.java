@@ -7,13 +7,13 @@ public class ejercicio5 {
 
         System.out.println("introduce 3 numeros distintos entre si");
         Scanner in= new Scanner(System.in);
-        int numero1=in.nextInt();
-        int numero2= in.nextInt();
-        int numero3=in.nextInt();
+        double numero1=in.nextDouble();
+        double numero2= in.nextDouble();
+        double numero3=in.nextDouble();
         double media=(numero1+numero2+numero3)/3;
         double media_sin=Math.ceil(media);
 
-        System.out.println("el resultado con decimales es "+media_sin "" );
+        System.out.println("el resultado con decimales es "+media +"el resultado sin decimales es "+media_sin );
 
     }
 
