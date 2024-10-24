@@ -11,8 +11,8 @@ public class ejercicio17 {
         double altura=in.nextDouble();
         System.out.println("pulse 0 si la figura es un cuadrado,pulse 1 si la figura de un rectangulo, pulse 2 si la figura es un triangulo ");
         int numero=in.nextInt();
-        if (numero != 0){
-            System.out.println();
+        if (numero != 0 || numero !=1 || numero !=2 ){
+            System.out.println("opcion no valida");
         }
         switch (numero){
             case 0:
