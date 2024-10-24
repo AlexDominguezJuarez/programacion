@@ -11,5 +11,8 @@ public class ejercicio2 {
         double altura= in.nextDouble();
         double superficie= (base*altura)/2;
         System.out.println("la superficie del triangulo es " +superficie);
+
+        double perimetro= base*3;
+        System.out.println("el perimetro del triangulo es " +perimetro);
     }
 }
