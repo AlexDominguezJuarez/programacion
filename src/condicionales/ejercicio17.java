@@ -10,21 +10,24 @@ public class ejercicio17 {
         System.out.println("introduce lam altura de ka figura");
         double altura=in.nextDouble();
         System.out.println("pulse 0 si la figura es un cuadrado,pulse 1 si la figura de un rectangulo, pulse 2 si la figura es un triangulo ");
-        String numero=in.next();
+        int numero=in.nextInt();
+        if (numero != 0){
+            System.out.println();
+        }
         switch (numero){
-            case "0":
+            case 0:
                 double superficie = base * base;
                 double perimetro = base*4;
                 System.out.println("la superficie es " + superficie);
                 System.out.println("el perimetro es " + perimetro);
                 return;
-            case "1":
+            case 1:
                 superficie = base * altura;
                 perimetro = base*2+altura*2;
                 System.out.println("la superficie es " + superficie);
                 System.out.println("el perimetro es " + perimetro);
                 return;
-            case "2":
+            case 2:
                  superficie= (base*altura)/2;
                 System.out.println("la superficie del triangulo es " +superficie);
                  perimetro= base*3;
@@ -32,6 +35,8 @@ public class ejercicio17 {
                 return;
 
 
+
         }
+
     }
 }
