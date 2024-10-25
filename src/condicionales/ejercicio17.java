@@ -20,7 +20,7 @@ public class ejercicio17 {
                 double perimetro = base*4;
                 System.out.println("la superficie es " + superficie);
                 System.out.println("el perimetro es " + perimetro);
-                return;
+                break;
             case 1:
                 superficie = base * altura;
                 perimetro = base*2+altura*2;

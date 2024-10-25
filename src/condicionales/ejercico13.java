@@ -16,9 +16,12 @@ public class ejercico13 {
             if (minutos==60){
                 minutos=0;
                 horas=(horas+1);
+                if (horas>=24){
+                    horas=0;
+                }
 
             }
         }
-        System.out.println("La hora mas un segundo es "+horas +" "+ minutos+" "+segundos);
+        System.out.println("La hora mas un segundo es "+horas +" horas "+ minutos+" minutos "+segundos+" segundos");
     }
 }
