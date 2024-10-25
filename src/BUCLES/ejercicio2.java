@@ -14,7 +14,6 @@ public class ejercicio2 {
                 while (numero1<numero2){
                     System.out.println(numero1);
                     numero1=numero1+2;
-
                 }
             }else{
                 while (numero1<numero2){
@@ -22,8 +21,6 @@ public class ejercicio2 {
                     numero1=numero1+2;
                 }
             }
-
-
         }
     }
 }
