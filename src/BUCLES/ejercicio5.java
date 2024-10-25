@@ -9,14 +9,15 @@ public class ejercicio5 {
         int numero=0;
         int numero_de_numeros=0;
         int numero_total=0;
-        while (numero<=0){
+        while(numero>=0){
+
+            numero_total=numero+numero_total;
             numero=in.nextInt();
             numero_de_numeros=numero_de_numeros+1;
-            numero_total=numero+numero_total;
 
 
         }
         double numero_dividido=numero_total/numero_de_numeros;
-        System.out.println();
+        System.out.println("la media de los numeros introducidos es "+numero_dividido ;
     }
 }
