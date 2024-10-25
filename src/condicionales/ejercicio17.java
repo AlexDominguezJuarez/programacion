@@ -20,22 +20,19 @@ public class ejercicio17 {
                 double perimetro = base*4;
                 System.out.println("la superficie es " + superficie);
                 System.out.println("el perimetro es " + perimetro);
-                break;
+                System.exit(0);
             case 1:
                 superficie = base * altura;
                 perimetro = base*2+altura*2;
                 System.out.println("la superficie es " + superficie);
                 System.out.println("el perimetro es " + perimetro);
-                return;
+                System.exit(0);
             case 2:
                  superficie= (base*altura)/2;
                 System.out.println("la superficie del triangulo es " +superficie);
                  perimetro= base*3;
                 System.out.println("el perimetro del triangulo es " +perimetro);
-                return;
-
-
-
+                System.exit(0);
         }
 
     }

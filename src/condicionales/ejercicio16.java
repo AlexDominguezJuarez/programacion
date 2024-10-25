@@ -14,10 +14,11 @@ public class ejercicio16 {
             case "d":
                 double dolares=(dinero*1.08);
                 System.out.println("la cantidad introduciuda son "+dolares+" dolares");
-                return;
+                System.exit(0);
             case "e":
                 double euros=(dinero*0.93);
                 System.out.println("la cantidad introducida son "+euros+" euros");
+                System.exit(0);
 
         }
     }
