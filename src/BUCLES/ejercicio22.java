@@ -2,7 +2,7 @@ package BUCLES;
 
 import java.util.Scanner;
 
-public class ejercicio4 {
+public class ejercicio22 {
     public static void main(String[] args) {
         System.out.println("introduce un numero entero");
         Scanner in=new Scanner(System.in);
