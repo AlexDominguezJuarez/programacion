@@ -17,8 +17,6 @@ public class ejercicio24 {
                 if (nota >= 5) {
                     nota = in.nextDouble();
                 }
-
-
         }
         System.out.println("han  suspendido " + suspenso + " alumnos");
     }
