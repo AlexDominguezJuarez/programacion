@@ -11,14 +11,12 @@ public class ejercicio26 {
         int numero2 = numero1;
         numero1 = numero1 - 1;
         int numero3 = 1;
-        for (numero1 = numero1; numero1 >= 2; numero1--) {
-            if (numero2 % numero1 == 0) {
-                numero3 = numero2 % numero1;
-                numero1 = 2;
-
-
+        for (int i = numero1; i >= 2; i--) {
+            if (numero2 % i == 0) {
+                numero3 = numero2 % i;
+                i = 2;
             }
-            }
+        }
             if (numero3 == 0) {
                 System.out.println("el numero no es primo");
 
