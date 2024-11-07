@@ -24,7 +24,7 @@ public class ejercicio29 {
                     System.out.println("el numero que has introducido es mas grande que el numero a adivinar");
                     numero = in.nextInt();
                 }
-            }
+            }System.out.println("Felicidades, has introducido el numero correcto");
 
         }
     }
