@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ejercicio20 {
     public static void main(String[] args) {
-        System.out.println("introduce 2 numeros");
+        System.out.println("introduce 2 numeros y te mostraremos todos los numeros impares entre ellos");
         Scanner in= new Scanner(System.in);
         int numero1= in.nextInt();
         int numero2=in.nextInt();
