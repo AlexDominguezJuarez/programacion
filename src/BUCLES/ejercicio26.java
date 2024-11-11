@@ -10,9 +10,11 @@ public class ejercicio26 {
         int numero1 = in.nextInt();
         int numero2 = numero1;
         numero1 = numero1 - 1;
+        //boolean esPrimo=true;
         int numero3 = 1;
         for (int i = numero1; i >= 2; i--) {
             if (numero2 % i == 0) {
+                //esPrimo=false;
                 numero3 = numero2 % i;
                 i = 2;
             }
