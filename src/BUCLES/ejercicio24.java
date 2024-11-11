@@ -8,17 +8,20 @@ public class ejercicio24 {
         Scanner in = new Scanner(System.in);
         double nota = in.nextDouble();
         int suspenso = 0;
+        int personas=0;
         while (nota > 0 && nota<=10) {
 
                 if (nota < 5) {
                     suspenso = suspenso + 1;
                     nota = in.nextDouble();
+                    personas++;
                 }
                 if (nota >= 5) {
                     nota = in.nextDouble();
+                    personas++;
                 }
         }
-        System.out.println("han  suspendido " + suspenso + " alumnos");
+        System.out.println("han  suspendido " + suspenso + " alumnos, han aprobado "+ (personas-suspenso) +" alumnos ");
     }
 }
 
