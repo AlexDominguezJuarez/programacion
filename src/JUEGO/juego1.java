@@ -1,59 +1,78 @@
 package JUEGO;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 import java.util.Scanner;
 
 public class juego1 {
     public static void main(String[] args) {
+        System.out.println("BIENVENIDO AL SIMULADOR DE PELEAS");
         Scanner in = new Scanner(System.in);
+        DecimalFormat decimales= new DecimalFormat("####.##");
         int porcentaje = 10;
-        System.out.println("Introduce los atributos del jugador 1, un atributo no puede tener mas de 150 puntos, el total de los atributos no pueder ser superior a 500");
-        System.out.println("Ataque jugador 1: ");
+        System.out.println("Introduce el nombre del jugador uno");
+        String nombre1=in.next();
+
+        System.out.println("Introduce el nombre del jugador dos");
+        String nombre2=in.next();
+        System.out.println("Introduce los atributos de "+nombre1+", un atributo no puede tener mas de 150 puntos, el total de los atributos no pueder ser superior a 500");
+        System.out.println("Ataque de "+nombre1+" : ");
         double ataque1 = in.nextInt();
+
         ataque1=ataque1/1.7;
-        System.out.println("Defensa jugador 1: ");
+        decimales.format(ataque1);
+        System.out.println("Defensa de "+ nombre1+" : ");
         double defensa1 = in.nextInt()/1.7;
-        System.out.println("Velocidad jugador 1: ");
-        int velocidad1 = in.nextInt();
-        System.out.println("Vida jugador 1:");
-        int vida1 = in.nextInt();
+        decimales.format(defensa1);
+        System.out.println("Velocidad de "+nombre1+" : ");
+        double velocidad1 = in.nextInt();
+        decimales.format(velocidad1);
+        System.out.println("Vida de " +nombre1+" :");
+        double vida1 = in.nextInt();
+        decimales.format(vida1);
         Random pof = new Random(10);
         int probabiliad_critico1 = 20;
-        int regeneracion1 = vida1 / 10;
+        double regeneracion1 = vida1 / 10;
         while (vida1 + ataque1 + defensa1 + velocidad1 > 500) {
             System.out.println("valores demasiado superiores, introduzca de nuevo");
-            System.out.println("Ataque jugador 1: ");
+            System.out.println("Ataque de " +nombre1+": ");
             ataque1 = in.nextInt();
-            System.out.println("Defensa jugador 1: ");
+            System.out.println("Defensa de "+ nombre1+" : ");
             defensa1 = in.nextInt();
-            System.out.println("Velocidad jugador 1: ");
+            System.out.println("Velocidad de "+ nombre1+" : ");
             velocidad1 = in.nextInt();
-            System.out.println("Vida jugador 1:");
+            System.out.println("Vida de " + nombre1+ ":");
             vida1 = in.nextInt();
         }
 
         System.out.println("Introduce los atributos del jugador 2, un atributo no puede tener mas de 150 puntos, el total de los atributos no pueder ser superior a 500");
-        System.out.println("Ataque jugador 2: ");
-        double ataque2 = in.nextInt()/1.7;
-        System.out.println("Defensa jugador 2: ");
+        double ataque2 = in.nextInt();
+
+        ataque2=ataque2/1.7;
+        decimales.format(ataque2);
+        System.out.println("Defensa de "+ nombre2+" : ");
         double defensa2 = in.nextInt()/1.7;
-        System.out.println("Velocidad jugador 2: ");
-        int velocidad2 = in.nextInt();
-        System.out.println("Vida jugador 2:");
-        int vida2 = in.nextInt();
-        int probabilidad_critico2 = 20;
-        int regeneracion2 = vida2 / 10;
+        decimales.format(defensa2);
+        System.out.println("Velocidad de "+nombre2+" : ");
+        double velocidad2= in.nextInt();
+        decimales.format(velocidad2);
+        System.out.println("Vida de " +nombre2+" :");
+        double vida2 = in.nextInt();
+        decimales.format(vida2);
+
+        int probabiliad_critico2 = 20;
+        double regeneracion2 = vida2 / 10;
         while (vida2 + ataque2 + defensa2 + velocidad2 > 500) {
-            System.out.println("Valores demasiado superiores, introduzca de nuevo");
-            System.out.println("Introduce los atributos del jugador 2, la suma de los atributos no puede sumar mas de 500");
-            System.out.println("Ataque jugador 2: ");
-            ataque2 = in.nextInt();
-            System.out.println("Defensa jugador 2: ");
-            defensa2 = in.nextInt();
-            System.out.println("Velocidad jugador 2: ");
-            velocidad2 = in.nextInt();
-            System.out.println("Vida jugador 2:");
-            vida2 = in.nextInt();
+            System.out.println("valores demasiado superiores, introduzca de nuevo");
+            System.out.println("Ataque de " +nombre2+": ");
+            ataque1 = in.nextInt();
+            System.out.println("Defensa de "+ nombre2+" : ");
+            defensa1 = in.nextInt();
+            System.out.println("Velocidad de "+ nombre2+" : ");
+            velocidad1 = in.nextInt();
+            System.out.println("Vida de " + nombre2+ ":");
+            vida1 = in.nextInt();
+
         }
         System.out.println(".........................................................................................................................................................................................................................");
         System.out.println("ATRIBUTOS JUGADOR 1");
@@ -73,17 +92,18 @@ public class juego1 {
         System.out.println("REGENERACION : " + regeneracion2);
 
         int accion = 0;
-        int golpe = 0;
+        double golpe = 0;
         int ronda = 0;
         boolean ganador=true;
+        boolean vivo=true;
         System.out.println(".........................................................................................................................................................................................................................");
-        while ((vida1 | vida2) > 0) {
+        while ( vivo==true) {
             ronda = ronda++;
 
             if (velocidad1 > velocidad2) {
                 ronda++;
                 System.out.println("RONDA " + ronda);
-                System.out.println("¿Que quiere hacer el jugador uno?");
+                System.out.println("¿Que quiere hacer "+ nombre1+" ?");
                 System.out.println("1. ATAQUE");
                 System.out.println("2. REGENERACION");
                 accion = in.nextInt();
@@ -97,6 +117,9 @@ public class juego1 {
                             golpe=golpe*2;
                             System.out.println("GOLPE CRITICO!!");
                         }
+                        if (vida2<=0) {
+                            vivo = false;
+                        }
                         System.out.println("Daño inflingido : " + golpe);
                         System.out.println("Vida jugador 2 : " + vida2);
                         break;
@@ -106,11 +129,11 @@ public class juego1 {
                         System.out.println("Vida jugador 1: " + vida1);
                         break;
                 }
-                if ((vida1 | vida2) > 0) {
+                if ( vivo==true) {
                     System.out.println("");
 
                     System.out.println("");
-                    System.out.println("¿Que quiere hacer el jugador dos?");
+                    System.out.println("¿Que quiere hacer "+ nombre2+ "?");
                     System.out.println("1. ATAQUE");
                     System.out.println("2. REGENERACION");
                     accion = in.nextInt();
@@ -125,7 +148,10 @@ public class juego1 {
                             }
                             vida1 = vida1 - golpe;
                             System.out.println("Daño inflingido : " + golpe);
-                            System.out.println("Vida jugador 1 : " + vida2);
+                            System.out.println("Vida jugador 1 : " + vida1);
+                            if (vida1<=0) {
+                                vivo = false;
+                            }
                             break;
 
                         case 2:
@@ -141,7 +167,7 @@ public class juego1 {
             } else {
                 ronda++;
                 System.out.println("RONDA " + ronda);
-                System.out.println("¿Que quiere hacer el jugador dos?");
+                System.out.println("¿Que quiere hacer "+ nombre2+"?");
                 System.out.println("1. ATAQUE");
                 System.out.println("2. REGENERACION");
                 accion = in.nextInt();
@@ -157,6 +183,9 @@ public class juego1 {
                         vida1 = vida1 - golpe;
                         System.out.println("Daño inflingido : " + golpe);
                         System.out.println("Vida jugador 2 : " + vida1);
+                        if (vida2<=0) {
+                            vivo = false;
+                        }
                         break;
 
                     case 2:
@@ -164,11 +193,12 @@ public class juego1 {
                         System.out.println("Vida jugador 2: " + vida2);
                         break;
                 }
-                if ((vida1 | vida2) > 0) {
+                if (vivo=true){
+
                     System.out.println("");
 
                     System.out.println("");
-                    System.out.println("¿Que quiere hacer el jugador uno?");
+                    System.out.println("¿Que quiere hacer "+nombre1+"?");
                     System.out.println("1. ATAQUE");
                     System.out.println("2. REGENERACION");
                     accion = in.nextInt();
@@ -183,12 +213,15 @@ public class juego1 {
                             }
                             vida1 = vida1 - golpe;
                             System.out.println("Daño inflingido : " + golpe);
-                            System.out.println("Vida jugador 1 : " + vida2);
+                            System.out.println("Vida jugador 1 : " + vida1);
+                            if (vida1<=0){
+                                vivo=false;
+                            }
                             break;
 
                         case 2:
                             vida2 = vida2 + regeneracion2;
-                            System.out.println("Vida jugador 2: " + vida1);
+                            System.out.println("Vida jugador 2: " + vida2);
                             break;
 
                     }
@@ -206,4 +239,5 @@ public class juego1 {
             System.out.println("EL GANDOR DEL COMBATE ES EL JUGADOR DOS");
         }
     }
+
 }
