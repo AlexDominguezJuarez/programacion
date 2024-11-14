@@ -72,10 +72,35 @@ public class juego1 {
         System.out.println("REGENERACION : " + regeneracion2);
 
         int accion = 0;
-
+        int golpe=0;
         int ronda = 0;
         System.out.println(".........................................................................................................................................................................................................................");
         while ((vida1|vida2) > 0){
+            ronda=ronda++;
+            System.out.println("RONDA "+ronda);
+            if (velocidad1>velocidad2){
+                System.out.println("¿Que quiere hacer el jugador uno?");
+                System.out.println("1. ATAQUE");
+                System.out.println("2. REGENERACION");
+                accion=in.nextInt();
+                switch (accion) {
+                    case 1:
+                        golpe = vida2 + defensa2 % -ataque1;
+                        vida2=vida2-golpe;
+                        System.out.println("Daño inflingido : "+golpe);
+                        System.out.println("Vida jugador 2 : "+vida2);
+                        break;
+
+                    case 2:
+                        vida1=vida1+regeneracion1;
+                        System.out.println("Vida jugador 1: "+vida1);
+                        break;
+                }
+                System.out.println("");
+                System.out.println("");
+                System.out.println("");
+            }
+
 
         }
 
