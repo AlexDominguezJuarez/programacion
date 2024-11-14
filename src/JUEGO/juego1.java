@@ -111,7 +111,7 @@ public class juego1 {
                     case 1:
                         int numero_critico=pof.nextInt(5);
                         int numero_critico2= pof.nextInt(5);
-                        golpe = defensa2 % ataque1;
+                        golpe = ataque1-(defensa2 % ataque1);
                         vida2 = vida2 - golpe;
                         if (numero_critico==numero_critico2){
                             golpe=golpe*2;
@@ -128,8 +128,7 @@ public class juego1 {
                         vida1 = vida1 + regeneracion1;
                         System.out.println("Vida jugador 1: " + vida1);
                         break;
-                }
-                if ( vivo==true) {
+                } if ( vivo==true) {
                     System.out.println("");
 
                     System.out.println("");
@@ -141,7 +140,7 @@ public class juego1 {
                         case 1:
                             int numero_critico=pof.nextInt(5);
                             int numero_critico2= pof.nextInt(5);
-                            golpe = defensa1 % ataque2;
+                            golpe = ataque1-(defensa2 % ataque1);
                             if (numero_critico==numero_critico2) {
                                 golpe = golpe * 2;
                                 System.out.println("GOLPE CRITICO!!");
@@ -153,6 +152,7 @@ public class juego1 {
                                 vivo = false;
                             }
                             break;
+
 
                         case 2:
                             vida2 = vida2 + regeneracion2;
@@ -175,7 +175,7 @@ public class juego1 {
                     case 1:
                         int numero_critico=pof.nextInt(5);
                         int numero_critico2= pof.nextInt(5);
-                        golpe = defensa1 % ataque2;
+                        golpe = ataque1-(defensa2 % ataque1);
                         if (numero_critico==numero_critico2) {
                             golpe = golpe * 2;
                             System.out.println("GOLPE CRITICO!!");
@@ -192,8 +192,7 @@ public class juego1 {
                         vida2 = vida2 + regeneracion2;
                         System.out.println("Vida jugador 2: " + vida2);
                         break;
-                }
-                if (vivo=true){
+                }if (vivo=true){
 
                     System.out.println("");
 
@@ -206,7 +205,7 @@ public class juego1 {
                         case 1:
                             int numero_critico= pof.nextInt(5);
                             int numero_critico2= pof.nextInt(5);
-                            golpe = defensa2 % ataque1;
+                            golpe = ataque1-(defensa2 % ataque1);
                             if (numero_critico==numero_critico2) {
                                 golpe = golpe * 2;
                                 System.out.println("GOLPE CRITICO!!");
@@ -223,6 +222,7 @@ public class juego1 {
                             vida2 = vida2 + regeneracion2;
                             System.out.println("Vida jugador 2: " + vida2);
                             break;
+
 
                     }
 
