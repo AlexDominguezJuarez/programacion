@@ -238,7 +238,7 @@ public class juego1 {
                     case 8:
                         System.out.println("HAS ELEGIDO AL RUMANO");
                         System.out.println("MAS FRIO QUE UNA NOCHE EN EL CASTILLO DE SU ABUELO EL CONDE DRACULA, EL RUMANO LLEGO A ESPAÑA HACE AÑOS, VIGILA QUE TUS TUBERIAS NO SEAN DE COBRE");
-                        
+
 
 
 
