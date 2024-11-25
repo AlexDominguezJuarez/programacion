@@ -871,6 +871,7 @@ public class juego1 {
                             }
                             break;
 
+
                         case 2:
                             vida2 = vida2 + regeneracion2;
                             System.out.println("Vida "+nombre2+ ": "+ vida2);
