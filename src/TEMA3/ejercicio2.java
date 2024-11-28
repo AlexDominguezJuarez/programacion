@@ -30,7 +30,7 @@ public class ejercicio2 {
             System.out.println("ERES MENOR DE EDAD");
         }
 
-         Scanner in= new Scanner(System.in);
+
          System.out.println("INTRODUCE UN NUMERO");
          int numero_introducido_main= in.nextInt();
 
