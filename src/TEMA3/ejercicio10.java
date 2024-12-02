@@ -10,7 +10,8 @@ import static TEMA3.ejercicio3.calculate_circle_perimetre;
 import static TEMA3.ejercicio5.tabla_de_multiplicar;
 import static TEMA3.ejercicio7.calcular_numero_primo;
 import static TEMA3.ejercicio8.comprobacion_dia_y_mes;
-
+import static TEMA3.ejercicio4.showMenu;
+import static TEMA3.ejercicio9.piramide;
 
 
 
@@ -60,7 +61,13 @@ public class ejercicio10 {
 
 
             case 4:
-                System.out.println("");
+                System.out.println("PULSE 1 SI QUIERE CONVERTIR EUROS A DOLARES");
+                System.out.println("PULSE 2 SI QUIERE CONVERTIR DOLARES A EUROS");
+                eleccion=in.nextInt();
+                System.out.println("INTRODUCE LA CANTIDAD DE DINERO A CONVERTIR");
+
+                showMenu(eleccion);
+                break;
 
 
             case 5:
@@ -111,7 +118,16 @@ public class ejercicio10 {
                 break;
 
             case 9:
+                System.out.println("INTRODUCE LA LETRA LA CUAL FORMARA LA PIRAMIDE" );
+                Scanner in_= new Scanner(System.in);
+                String palabra= in_.nextLine();
 
+                char letra=palabra.charAt(0);
+                System.out.println("INTRODUCE LAS FILAS DE LA PIRAMIDE");
+                int linea= in_.nextInt();
+
+                piramide(letra, linea);
+                break;
 
         }
 
@@ -119,4 +135,3 @@ public class ejercicio10 {
     }
 
 }
-
