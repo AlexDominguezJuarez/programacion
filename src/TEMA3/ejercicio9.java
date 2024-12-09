@@ -26,7 +26,7 @@ public class ejercicio9 {
                 System.out.print(" ");
             }
             while(j != 2 * i - 1) {
-                System.out.print("T");
+                System.out.print(letra);
                 ++j;
             }
 
