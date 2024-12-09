@@ -62,6 +62,7 @@ public class prueba_Utils {
                 System.out.println("INTRODUCE TU NUMERO DE DNI");
                 dni=in.nextInt();
                 System.out.println("INTRODUCE LA LETRA DE TU DNI");
+                String basura= in.nextLine();
                 letra= in.nextLine();
                 boolean correcto=isValidNif(dni,letra);
                 if (correcto==true){
