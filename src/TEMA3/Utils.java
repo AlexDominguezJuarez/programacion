@@ -1,15 +1,21 @@
 package TEMA3;
 
+import java.util.Date;
 import java.util.Scanner;
 
 public class Utils {
     public static double miles2kilometers(double distancia) {
 
-        System.out.println("INTRODUCE LA DISTANCIA A CONVERTIR");
-        Scanner in = new Scanner(System.in);
-        distancia = in.nextDouble();
+
+
         double kilometros = distancia * 1.0609;
         return kilometros;
+    }
+
+    public static double kilometers2miles(double distancia){
+        double millas=distancia*0.621371;
+        return millas;
+
     }
 
     public static double getTaxes(double cantidad, int porcentaje) {

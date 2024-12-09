@@ -6,7 +6,7 @@ public class ejercicio6 {
 
     public static void main(String[] args) {
         int numero=0;
-        while (numero<20){
+        while (numero<10){
             numero++;
             tabla_de_multiplicar(numero);
         }

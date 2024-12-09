@@ -15,20 +15,17 @@ public class ejercicio4 {
             case 1:
                 System.out.println("DE EUROS A DOLARES");
                 System.out.println("INTRODUCE LA CANTIDAD DE DINERO A COVERTIR");
-                dinero=in.nextInt();
+                dinero=in.nextDouble();
                 dolar= (dinero *1.05);
+                dolar=Math.round(dolar);
                 System.out.println("SON "+dolar+" DOLARES");
                 break;
-
-
-
-
-
             case 2:
                 System.out.println("DE DOLARES A EUROS");
                 System.out.println("INTRODUCE LA CANTIDAD DE DINERO A COVERTIR");
-                dinero=in.nextInt();
+                dinero=in.nextDouble();
                 euro=(dinero*0.96);
+                euro=Math.round(euro);
                 System.out.println("SON "+euro+" EUROS");
                 break;
 

@@ -55,7 +55,7 @@ public class ejercicio10 {
                 double radio = in.nextDouble();
                 double perimetro = calculate_circle_perimetre(radio);
                 double area = calculate_circle_area(radio);
-                System.out.println("EL PERIMETRO DEL CIRCULO ES: " + perimetro + "/ EL AREA DEL CIRCULO ES: " + area);
+                System.out.println("EL PERIMETRO DEL CIRCULO ES: " + perimetro + " / EL AREA DEL CIRCULO ES: " + area);
 
                 break;
 
@@ -64,7 +64,7 @@ public class ejercicio10 {
                 System.out.println("PULSE 1 SI QUIERE CONVERTIR EUROS A DOLARES");
                 System.out.println("PULSE 2 SI QUIERE CONVERTIR DOLARES A EUROS");
                 eleccion=in.nextInt();
-                System.out.println("INTRODUCE LA CANTIDAD DE DINERO A CONVERTIR");
+
 
                 showMenu(eleccion);
                 break;
@@ -82,7 +82,7 @@ public class ejercicio10 {
             case 6:
 
                 numero = 0;
-                while (numero < 20) {
+                while (numero < 10) {
                     numero++;
                     tabla_de_multiplicar(numero);
                 }
