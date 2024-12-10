@@ -11,13 +11,14 @@ public class ejercicio8 {
             comprobacion=false;
         }
 
-        if (mes == (1 | 3 | 5 | 7 | 8 | 10 | 12)) {
+
+        if ((mes == 1) || (mes == 3) || (mes ==5) || (mes==7) ||(mes== 8) ||(mes== 10) ||(mes==12)) {
             if (dia < 1 | dia > 31) {
                 comprobacion = false;
             }
         }
 
-        if (mes == (4 | 6 | 9 | 11)) {
+        if ((mes == 4) || (mes == 6) || (mes ==9) || (mes==11)) {
             if (dia < 1 | dia > 30) {
                 comprobacion = false;
             }

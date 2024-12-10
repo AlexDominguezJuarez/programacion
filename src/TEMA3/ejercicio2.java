@@ -8,14 +8,11 @@ import static TEMA3.ejercicio1.numberSign;
 public class ejercicio2 {
 
     public static boolean isAdult(int edad){
-        boolean mayor_de_edad=true;
-
-
-
         if(edad<18){
-            mayor_de_edad= false;
+
+            return false;
         }
-        return mayor_de_edad;
+        return true;
 
     }
      public static void main(String[] args) {

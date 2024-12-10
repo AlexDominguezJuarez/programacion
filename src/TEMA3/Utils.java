@@ -33,54 +33,72 @@ public class Utils {
     public static double getCoins(double dinero) {
         int dinero_final = 0;
         dinero = dinero * 100;
+        int euro2 = 0;
+        int euro1 = 0;
+        int cent50 = 0;
+        int cent20 = 0;
+        int cent10 = 0;
+        int cent5 = 0;
+        int cent2 = 0;
+        int cent1 = 0;
         while (dinero > 200) {
-            int euro2 = 0;
             euro2++;
             dinero = dinero - 200;
-            dinero_final = dinero_final + 10000000;
         }
+        dinero_final=euro2*10000000+dinero_final;
+
         while (dinero > 100) {
-            int euro1 = 0;
+
             euro1++;
             dinero = dinero - 100;
-            dinero_final = dinero_final + 1000000;
+
         }
+
+        dinero_final=euro1*1000000+dinero_final;
         while (dinero > 50) {
-            int cent50 = 0;
+
             cent50++;
             dinero = dinero - 50;
-            dinero_final = dinero_final + 100000;
+
         }
+        dinero_final=cent50*100000+dinero_final;
         while (dinero > 20) {
-            int cent20 = 0;
+
             cent20++;
             dinero = dinero - 20;
-            dinero_final = dinero_final + 10000;
+
         }
+
+        dinero_final=cent20*10000+dinero_final;
+
         while (dinero > 10) {
-            int cent10 = 0;
+
             cent10++;
             dinero = dinero - 10;
-            dinero_final = dinero_final + 1000;
         }
+        dinero_final=cent10*1000+dinero_final;
+
         while (dinero < 5) {
-            int cent5 = 0;
+
             cent5++;
             dinero = dinero - 5;
-            dinero_final = dinero_final + 100;
         }
+        dinero_final=cent10*100+dinero_final;
+
         while (dinero > 2) {
-            int cent2 = 0;
+
             cent2++;
             dinero = dinero - 2;
-            dinero_final = dinero_final + 10;
         }
+        dinero_final=cent10*10+dinero_final;
+
         while (dinero > 1) {
-            int cent1 = 0;
+
             cent1++;
             dinero = dinero - 1;
-            dinero_final++;
         }
+        dinero_final=cent10*1+dinero_final;
+
         return dinero_final;
     }
 

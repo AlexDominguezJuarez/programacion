@@ -4,22 +4,14 @@ import java.util.Scanner;
 
 public class ejercicio7 {
     public static boolean calcular_numero_primo(int numero) {
-        boolean primo = true;
         int numero2 = numero - 1;
-
-
         for (int i = numero; numero2 >= 2; numero2--) {
 
-
             if (i%numero2 == 0) {
-
-                primo = false;
-                i = 2;
-
+                return   false;
             }
-
         }
-       return primo;
+       return true;
     }
 
     public static void main(String[] args) {

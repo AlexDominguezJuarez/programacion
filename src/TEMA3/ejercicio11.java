@@ -137,10 +137,11 @@ public class ejercicio11 {
 
             case 6:
                 System.out.println("HAS SELECCIONADO CALCULAR EL FACTORIAL DE UN NUMERO");
+                Scanner in=new Scanner(System.in);
+                numero=in.nextInt();
 
 
-
-                factorial_recursivo();
+                factorial_recursivo(numero);
 
 
                 break;
@@ -161,7 +162,7 @@ public class ejercicio11 {
                 System.out.println("HAS SELECCIONADO CALCULAR LA SUMA DE LOS DIGITOS DE UN NUMERO");
                 System.out.println("INTRODUCE UN NUMERO");
                 numero=scanner.nextInt();
-                int resultado=digitos_de_un_numero(numero);
+                int resultado=suma_de_digitos(numero);
                 System.out.println("EL RESULTADO ES: "+resultado);
 
                 break;

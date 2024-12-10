@@ -34,20 +34,16 @@ public class MyMath {
         int numero2 = numero - 1;
         for (int i = numero; numero2 >= 2; numero2--) {
             if (i%numero2 == 0) {
-                primo = false;
-                i = 2;
+               return false;
+
             }
         }
         return primo;
     }
 
     public static boolean no_es_primo(int numero){
-        boolean es_primo=es_primo(numero);
-        if (es_primo==true){
-            return false;
-        }else {
-            return true;
-        }
+
+        return !es_primo(numero);
     }
 
     public static int digitos_de_un_numero(int numero){
@@ -55,89 +51,54 @@ public class MyMath {
         while (numero>10){
             contador++;
             numero=numero/10;
+
+            //condicion
         }
         return contador;
     }
 
     public static int digitos_pares(int numero) {
 
-        int variable;
-        int contador = -1;
-        int cifra = 0;
-        int cifra_final = 0;
-        int cantidad_bucle = numero;
-        int cantidad = 1;
-        int veces_a_dividir = digitos_de_un_numero(numero);
-        while (veces_a_dividir >= 1) {
-            cantidad = cantidad * 10;
-            veces_a_dividir--;
-        }
-        while (numero > 0) {
-            cantidad_bucle = numero / cantidad;
-            cifra = Math.round(cantidad_bucle);
-            cifra_final = cifra_final + cifra;
-            variable = cifra * cantidad;
-            numero = numero - variable;
-            numero = Math.round(numero);
-            cantidad_bucle=numero;
-            cantidad = cantidad / 10;
-            if (cifra%2==0) {
+        int contador=0;
+        while (numero>10) {
+
+            if (numero % 2 == 0) {
                 contador++;
-
             }
+            numero = numero / 10;
 
-        }
-        return contador;
-
+        }return contador;
     }
 
     public static int digitos_impares(int numero){
-        int variable;
-        int contador = 0;
-        int cifra = 0;
-        int cifra_final = 0;
-        int cantidad_bucle = numero;
-        int cantidad = 1;
-        int veces_a_dividir = digitos_de_un_numero(numero);
-        while (veces_a_dividir >= 1) {
-            cantidad = cantidad * 10;
-            veces_a_dividir--;
-        }
-        while (numero > 0) {
-            cantidad_bucle = numero / cantidad;
-            cifra = Math.round(cantidad_bucle);
-            cifra_final = cifra_final + cifra;
-            variable = cifra * cantidad;
-            numero = numero - variable;
-            numero = Math.round(numero);
-            cantidad = cantidad / 10;
-            if (cifra%2==1) {
+        int contador=0;
+        while (numero>10){
+
+            if(numero%2==1){
                 contador++;
-
             }
-
-        }
-
-
-
-        return contador;
-
+            numero=numero/10;
+        }return contador;
     }
 
     public static int factorial(int numero){
         int resultado=1;
-        for (int i =numero;numero>1;numero--){
-            resultado = numero*resultado;
+        for (int i =numero;i>1;i--){
+            resultado = i*resultado;
         }
         return resultado;
     }
 
-    public static void factorial_recursivo (){
-        Scanner in=new Scanner(System.in);
-       ;
-       int numero;
-        int eleccion=1;
+    /*
+    int/double factorialRecursivo(numero)
 
+        r
+        return resultado;
+     */
+
+    public static void factorial_recursivo (int numero){
+   int eleccion=1;
+   Scanner in=new Scanner(System.in);
 
         while (eleccion==1) {   System.out.println("INTRODUCE EL NUMERO DEL CUAL QUIERES SABER SU FACTORIAL");
         numero=in.nextInt();
@@ -150,7 +111,7 @@ public class MyMath {
             eleccion = in.nextInt();
         }
 
-    }
+  }
 
     public static int resultados_ecuacion_segundo_grado(int numero_exponente2,int numero_exponente1, int numero_exponente0){
         int numero_resultados=0;
@@ -170,6 +131,8 @@ public class MyMath {
         return numero_resultados;
     }
     public static int suma_de_digitos(int numero){
+        //revisar con el ejer "digitos de un número" y añadir algo así:
+
         int variable;
         int cifra=0;
         int cifra_final=0;

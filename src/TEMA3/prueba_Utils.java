@@ -34,16 +34,18 @@ public class prueba_Utils {
             case 3:
                 System.out.println("INTRODUCE EL DINERO A PAGAR");
                 double dinero=in.nextDouble();
-                int porcentaje=21;
-                double impuesto=getNetPrice(dinero,porcentaje);
+                System.out.println("INTRODUCE EL PORCENTAJE A PAGAR");
+                int porcentaje= in.nextInt();
+                double impuesto=getTaxes(dinero,porcentaje);
                 System.out.println("EL DINERO ADICIONAL A PAGAR ES "+impuesto+"€");
 
                 break;
             case 4:
                     System.out.println("INTRODUCE EL DINERO A PAGAR");
                     dinero=in.nextDouble();
-                    porcentaje=21;
-                    double dinero_total=getCoins(dinero);
+                    System.out.println("INTRODUCE EL PORCENTAJE DE IMPUESTO");
+                    porcentaje= in.nextInt();
+                    double dinero_total=getNetPrice(dinero, porcentaje);
                     System.out.println("EL DINERO TOTAL A PAGAR ES "+dinero_total+"€");
                 break;
             case 5:
