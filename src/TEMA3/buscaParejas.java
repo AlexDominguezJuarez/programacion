@@ -91,215 +91,230 @@ public class buscaParejas {
         while (aciertos<10) {
             System.out.println();
             System.out.println("ELIJA UN NUMERO DEL 1 AL 20");
-            eleccion1 = in.nextInt();
+            eleccion1 = in.nextInt()-1;
             switch (eleccion1){
+                case 0:
+                    mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
+                    printearArrayString(arrayAnimales);
+                    break;
                 case 1:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
-                    System.out.println(mostrarAnimlal);
-
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 2:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
-
                     break;
                 case 3:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
-                    System.out.println(mostrarAnimlal);
-                    break;
-                case 4:
-                    mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
-
+                    break;
+                case 4: mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
+                    printearArrayString(arrayAnimales);
                     break;
                 case 5:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
-
                     break;
                 case 6:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
-
                     break;
                 case 7:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
-
                     break;
                 case 8:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 9:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 10:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 11:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 12:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 13:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
+                    printearArrayString(arrayAnimales);
+                    break;
+                case 14:
+                    mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 15:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 16:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 17:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 18:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 19:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
-                case 20:
-                    mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
-                    System.out.println(mostrarAnimlal);
+                case 20: mostrarAnimlal=devolverAnimal(arrayOculta[eleccion1]);
+                    arrayAnimales[eleccion1]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
             }
             System.out.println(arrayOculta[eleccion1]);
             System.out.println();
             System.out.println("ELIJA OTRO NUMERO DEL 1 AL 20");
-            eleccion2=in.nextInt();
+            eleccion2=in.nextInt()-1;
             switch (eleccion2){
+                case 0:
+                    mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
+                    printearArrayString(arrayAnimales);
+                    break;
                 case 1:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 2:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 3:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 4:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 5:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 6:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 7:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 8:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 9:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 10:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 11:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 12:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 13:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
-                    System.out.println(mostrarAnimlal);
+                    break;
+                case 14:
+                    mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
+                    printearArrayString(arrayAnimales);
                     break;
                 case 15:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 16:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 17:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 18:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
                 case 19:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
                     break;
+
                 case 20:
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
-                    System.out.println(mostrarAnimlal);
+                    arrayAnimales[eleccion2]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
-                    break;
-            }
+                    break;}
 
-            if (eleccion1==eleccion2){
+            if ((arrayAnimales[eleccion1]==arrayAnimales[eleccion2])&&( eleccion1!=eleccion2)){
                 System.out.println("PAREJA CORRECTA");
                 aciertos++;
-                arrayAnimales[eleccion1]=devolverAnimal(eleccion1);
-                arrayAnimales[eleccion2]=devolverAnimal(eleccion2);
-            } else if (eleccion1!=eleccion2) {
+                arrayAnimales[eleccion1-1]=devolverAnimal(eleccion1-1);
+                arrayAnimales[eleccion2-1]=devolverAnimal(eleccion2-1);
+            } else if ((arrayAnimales[eleccion2-1]!=arrayAnimales[eleccion1-1])||(eleccion2==eleccion1)) {
                 System.out.println("PAREJA INCORRECTA");
                 arrayAnimales[eleccion1]="*";
                 arrayAnimales[eleccion2]="*";
@@ -307,7 +322,6 @@ public class buscaParejas {
 
 
             }
-            recorrerFuncion=0;
             printearArrayString(arrayAnimales);
         }
     }
