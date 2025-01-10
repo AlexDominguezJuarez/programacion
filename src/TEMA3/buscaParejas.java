@@ -1,8 +1,4 @@
 package TEMA3;
-
-import javax.management.MBeanRegistration;
-import javax.management.MBeanRegistrationException;
-import javax.print.DocFlavor;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -10,15 +6,18 @@ public class buscaParejas {
 
     public static void printearArrayInt(int []array){
         int recorrerFuncion=0;
-        for (int i=20;i>recorrerFuncion;recorrerFuncion++) {
-            System.out.println(array[recorrerFuncion]);
+        int numeroDenumeros=array.length;
+        for (int i=0;i<numeroDenumeros;i++) {
+            System.out.println(array[i]);
 
         }
+
     }
     public static void printearArrayString(String[]array){
         int recorrerFuncion=0;
-        for (int i=20;i>recorrerFuncion;recorrerFuncion++) {
-            System.out.println(array[recorrerFuncion]);
+        int numeroDenumeros=array.length;
+        for (int i=0;i<numeroDenumeros;i++) {
+            System.out.println(array[i]);
 
         }
 
@@ -307,14 +306,15 @@ public class buscaParejas {
                     mostrarAnimlal=devolverAnimal(arrayOculta[eleccion2]);
                     arrayAnimales[eleccion2]=mostrarAnimlal;
                     printearArrayString(arrayAnimales);
-                    break;}
+                    break;
+            }
 
-            if ((arrayAnimales[eleccion1]==arrayAnimales[eleccion2])&&( eleccion1!=eleccion2)){
+            if ((arrayAnimales[eleccion1].equals(arrayAnimales[eleccion2])) && (eleccion1 != eleccion2)){
                 System.out.println("PAREJA CORRECTA");
                 aciertos++;
-                arrayAnimales[eleccion1-1]=devolverAnimal(eleccion1-1);
-                arrayAnimales[eleccion2-1]=devolverAnimal(eleccion2-1);
-            } else if ((arrayAnimales[eleccion2-1]!=arrayAnimales[eleccion1-1])||(eleccion2==eleccion1)) {
+                arrayAnimales[eleccion1-1]=devolverAnimal(eleccion1);
+                arrayAnimales[eleccion2-1]=devolverAnimal(eleccion2);
+            } else if ((arrayAnimales[eleccion2]!=arrayAnimales[eleccion1])||(eleccion2==eleccion1)) {
                 System.out.println("PAREJA INCORRECTA");
                 arrayAnimales[eleccion1]="*";
                 arrayAnimales[eleccion2]="*";
