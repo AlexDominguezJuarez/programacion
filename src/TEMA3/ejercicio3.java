@@ -42,7 +42,7 @@ public class ejercicio3 {
                 break;
             case 2:
                 double perimetro=calculate_circle_perimetre(radio);
-                System.out.println("EL PERIMETRO DEKL CIRCULO ES: "+perimetro);
+                System.out.println("EL PERIMETRO DEL CIRCULO ES: "+perimetro);
                 break;
         }
 

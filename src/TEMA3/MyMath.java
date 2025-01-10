@@ -52,7 +52,7 @@ public class MyMath {
             contador++;
             numero=numero/10;
 
-            //condicion
+
         }
         return contador;
     }
@@ -89,18 +89,14 @@ public class MyMath {
         return resultado;
     }
 
-    /*
-    int/double factorialRecursivo(numero)
 
-        r
-        return resultado;
-     */
 
-    public static void factorial_recursivo (int numero){
-   int eleccion=1;
-   Scanner in=new Scanner(System.in);
+    public static int  factorial_recursivo (int numero) {
+    /*int eleccion=1;
+    Scanner in=new Scanner(System.in);
 
-        while (eleccion==1) {   System.out.println("INTRODUCE EL NUMERO DEL CUAL QUIERES SABER SU FACTORIAL");
+        while (eleccion==1) {
+            System.out.println("INTRODUCE EL NUMERO DEL CUAL QUIERES SABER SU FACTORIAL");
         numero=in.nextInt();
             int resultado=1;
             for (int i = numero; numero> 1; numero--) {
@@ -111,7 +107,10 @@ public class MyMath {
             eleccion = in.nextInt();
         }
 
-  }
+  }*/
+        int resultado = numero * factorial(numero - 1);
+        return resultado;
+    }
 
     public static int resultados_ecuacion_segundo_grado(int numero_exponente2,int numero_exponente1, int numero_exponente0){
         int numero_resultados=0;
@@ -130,8 +129,8 @@ public class MyMath {
         }
         return numero_resultados;
     }
-    public static int suma_de_digitos(int numero){
-        //revisar con el ejer "digitos de un número" y añadir algo así:
+    public static int suma_de_digitos(int numero) {
+
 
         int variable;
         int cifra=0;
@@ -157,5 +156,9 @@ public class MyMath {
         cifra_final=cifra_final+numero;
 
         return cifra_final;
+
     }
 }
+
+
+

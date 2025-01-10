@@ -138,11 +138,12 @@ public class ejercicio11 {
             case 6:
                 System.out.println("HAS SELECCIONADO CALCULAR EL FACTORIAL DE UN NUMERO");
                 Scanner in=new Scanner(System.in);
+                System.out.println("INTRODUCE EL NUMERO");
                 numero=in.nextInt();
 
 
-                factorial_recursivo(numero);
-
+                int i=factorial_recursivo(numero);
+                System.out.println(i);
 
                 break;
 
