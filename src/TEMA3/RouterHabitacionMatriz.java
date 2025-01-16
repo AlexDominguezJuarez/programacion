@@ -28,7 +28,7 @@ public class RouterHabitacionMatriz {
     }
 
     public static boolean comprobacionRouter(int router){
-        if ((router>3)||(router<0)){
+        if ((router>6)||(router<0)){
             return false;
         }return true;
     }
@@ -47,8 +47,8 @@ public class RouterHabitacionMatriz {
         }
         System.out.println();
         System.out.println("¿EN QUE HABITACION QUIERE INSTALAR EL ROUTER? HAY HABITACIONES PARA ELEGIR DEL 1 AL 5");
-        int habitacion=in.nextInt()-1;
-
+        int habitacion=in.nextInt();
+        comprobacion=comprobadorHabitacion(habitacion);
         while (comprobacion==false) {
             System.out.println("INTRODUZCA DE NUEVO LA HABITACION");
             habitacion=in.nextInt()-1;
@@ -63,6 +63,8 @@ public class RouterHabitacionMatriz {
             potenciaWifi=in.nextInt();
             comprobacion=comprobacionRouter(potenciaWifi);
         }
+        habitacion--;
+        piso--;
 
         int potenciaWifiX=potenciaWifi;
         int potenciaWifiY=potenciaWifi;
@@ -75,41 +77,176 @@ public class RouterHabitacionMatriz {
 
 
         int [][] matrizWifi=new int [12][5];
-        matrizWifi[pisoX][habitacion]=potenciaWifi;
+        matrizWifi[piso][habitacion]=potenciaWifi;
         int numeroDeNumeros= matrizWifi.length;
-        while ((potenciaWifiX>0)&&(habitacion+contadorDerecha>5)&&(habitacion+contadorIzquierda>0)){
-            potenciaWifiX--;
 
-            contadorDerecha++;
+        while ((potenciaWifiY>0)&&(piso+contadorArriba<=12)){
+            potenciaWifiY--;
+            contadorArriba++;
+            if (contadorArriba+piso==12){
+                contadorArriba--;
+            }
+            matrizWifi[piso+contadorArriba][habitacion]=potenciaWifiY;
+
+        }
+        potenciaWifiY=potenciaWifi;
+
+        potenciaWifiY=potenciaWifi;
+        while ((potenciaWifiY>0)&&(piso+contadorAbajo>0)){
+            contadorAbajo--;
+            potenciaWifiY--;
+            matrizWifi[piso+contadorAbajo][habitacion]=potenciaWifiY;
+
+        }
+
+        while ((potenciaWifiX>0)&&(contadorIzquierda+habitacion>0)){
+            potenciaWifiX--;
             contadorIzquierda--;
 
-            if (contadorDerecha<5){
+            matrizWifi[piso][habitacion+contadorIzquierda]=potenciaWifiX;
+
+        }
+        potenciaWifiX=potenciaWifi;
+
+        while ((potenciaWifiX>0)&&(contadorDerecha+habitacion<5)){
+            potenciaWifiX--;
+            contadorDerecha++;
+            if (contadorDerecha+habitacion==5){
                 contadorDerecha--;
             }
 
-            if (contadorIzquierda<0){
+            matrizWifi[piso][habitacion+contadorDerecha]=potenciaWifiX;
+        }
+
+
+         contadorAbajo=0;
+         contadorArriba=0;
+         contadorDerecha=0;
+         contadorIzquierda=0;
+
+         int potenciaWifiXY=potenciaWifi;
+        while (comprobacion==true){
+
+            contadorAbajo--;
+            contadorIzquierda--;
+
+            if (contadorAbajo+piso<0){
+                contadorAbajo++;
+            }
+            if (contadorIzquierda+habitacion<0){
                 contadorIzquierda++;
             }
+            if (matrizWifi[piso + contadorAbajo][habitacion + contadorIzquierda] == 0) {
+                comprobacion=false;
+
+            }else {
+                potenciaWifiXY=potenciaWifiXY-2;
 
 
+                matrizWifi[piso+contadorAbajo][habitacion+contadorIzquierda]=potenciaWifiXY;
 
-            matrizWifi[piso][habitacion+contadorDerecha]=potenciaWifiX;
-            matrizWifi[piso][habitacion+contadorIzquierda]=potenciaWifiX;
-
-
+                if (potenciaWifiXY<1){
+                    comprobacion=false;
+                }
+            }
         }
-        numeroDeNumeros=matrizWifi.length;
-        while ((potenciaWifiY>0)&&(piso+contadorArriba>12)&&(piso+contadorAbajo>0)){
-            potenciaWifiY--;
+        comprobacion=true;
+        contadorAbajo=0;
+        contadorArriba=0;
+        contadorDerecha=0;
+        contadorIzquierda=0;
+
+
+        while (comprobacion==true){
+
             contadorArriba++;
-            contadorAbajo--;
+            contadorIzquierda--;
+
+            if (contadorArriba+piso<0){
+                contadorArriba--;
+            }
+            if (contadorIzquierda+habitacion<0){
+                contadorIzquierda++;
+            }
+            if (matrizWifi[piso + contadorArriba][habitacion + contadorIzquierda] == 0) {
+                comprobacion=false;
+
+            }else {
+                potenciaWifiXY=potenciaWifiXY-2;
 
 
-            matrizWifi[piso+contadorArriba][habitacion]=potenciaWifiY;
-            matrizWifi[piso+contadorAbajo][habitacion]=potenciaWifiY;
-
-
+                matrizWifi[piso+contadorArriba][habitacion+contadorIzquierda]=potenciaWifiXY;
+                if (potenciaWifiXY<1){
+                    comprobacion=false;
+                }
+            }
         }
+        comprobacion=true;
+        contadorAbajo=0;
+        contadorArriba=0;
+        contadorDerecha=0;
+        contadorIzquierda=0;
+
+        while (comprobacion==true){
+
+            contadorAbajo--;
+            contadorDerecha++;
+
+            if (contadorAbajo+piso<0){
+                contadorAbajo++;
+            }
+            if (contadorDerecha+habitacion>12){
+                contadorDerecha--;
+            }
+            if (matrizWifi[piso + contadorAbajo][habitacion + contadorDerecha] == 0) {
+                comprobacion=false;
+
+            }else {
+                potenciaWifiXY=potenciaWifiXY-2;
+
+
+                matrizWifi[piso+contadorAbajo][habitacion+contadorDerecha]=potenciaWifiXY;
+
+                if (potenciaWifiXY<1){
+
+                    comprobacion=false;
+                }
+            }
+        }
+        comprobacion=true;
+        contadorAbajo=0;
+        contadorArriba=0;
+        contadorDerecha=0;
+        contadorIzquierda=0;
+
+        while (comprobacion==true){
+
+            contadorArriba++;
+            contadorDerecha++;
+
+            if (contadorAbajo+piso<0){
+                contadorAbajo--;
+            }
+            if (contadorIzquierda+habitacion<0){
+                contadorIzquierda--;
+            }
+            if (matrizWifi[piso + contadorArriba][habitacion + contadorDerecha] == 0) {
+                comprobacion=false;
+
+            }else {
+                potenciaWifiXY=potenciaWifiXY-2;
+
+
+                matrizWifi[piso+contadorArriba][habitacion+contadorDerecha]=potenciaWifiXY;
+
+                if (potenciaWifiXY<1){
+                    comprobacion=false;
+                }
+            }
+        }
+
+
+
 
         imprimirMatriz(matrizWifi);
 

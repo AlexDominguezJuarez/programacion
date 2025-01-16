@@ -16,14 +16,20 @@ public class MyArray {
     }
 
     public static boolean comprobacionCapicua(int []array) {
-        int numeroEmpezandoPorArriba = array.length;
+        int numeroEmpezandoPorArriba = array.length-1;
         int numeroEmpezandoPorAbajo = 0;
+        int numero1;
+        int numero2;
         int recorrerFuncion = 0;
         int numeroDeElementos = array.length;
-        for (int i = numeroDeElementos; i < recorrerFuncion; recorrerFuncion++) {
-            if (array[numeroEmpezandoPorAbajo]!=array[numeroEmpezandoPorArriba]){
+        for (int i = numeroDeElementos; i > recorrerFuncion; recorrerFuncion++) {
+
+            numero1=array[numeroEmpezandoPorAbajo];
+            numero2=array[numeroEmpezandoPorArriba];
+            if (numero1!=numero2){
                 return false;
-            }numeroEmpezandoPorAbajo++;
+            }
+            numeroEmpezandoPorAbajo++;
             numeroEmpezandoPorArriba--;
         }
         return true;
@@ -142,6 +148,7 @@ public class MyArray {
 
 
     }
+    /// ///////////
     public static int [] invertirArrayFuncion (int []array1 ){
         int numeroDeElementos=array1.length;
         int informacionDeDentro=numeroDeElementos;
@@ -311,7 +318,7 @@ public class MyArray {
                 boolean comprobacionCapicua = comprobacionCapicua(arrayClass1);
                 if (comprobacionCapicua==true){
                     System.out.println("LA ARRAY ES CAPICUIA");
-                }else{
+                }else if (comprobacionCapicua==false){
                     System.out.println("LA ARRAY NO ES CAPICUA");
                 }
 

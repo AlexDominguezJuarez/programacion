@@ -314,7 +314,7 @@ public class buscaParejas {
                 aciertos++;
                 arrayAnimales[eleccion1]=devolverAnimal(eleccion1);
                 arrayAnimales[eleccion2]=devolverAnimal(eleccion2);
-            } else if ((arrayAnimales[eleccion2]!=arrayAnimales[eleccion1])||(eleccion2==eleccion1)) {
+            } else if (!(arrayAnimales[eleccion2].equals(arrayAnimales[eleccion1]))||(eleccion2==eleccion1)) {
                 System.out.println("PAREJA INCORRECTA");
                 arrayAnimales[eleccion1]="*";
                 arrayAnimales[eleccion2]="*";

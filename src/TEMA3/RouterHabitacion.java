@@ -9,14 +9,14 @@ public class RouterHabitacion {
         System.out.println();
         System.out.println("¿EN QUE HABITACION QUIERE INSTALAR EL ROUTER? HAY HABITACIONES PARA ELEGIR DEL 1 AL 20");
         int numeroHabitacion=in.nextInt()-1;
-        while ((numeroHabitacion<1)||(numeroHabitacion>20)){
+        while ((numeroHabitacion<0)||(numeroHabitacion>20)){
             System.out.println("HABITACION NO DISPONIBLE, INTRODUZCA LA HABITACION DE NUEVO");
             numeroHabitacion=in.nextInt();
         }
         System.out.println("ELIJA LA POTENCIA DE LA CONEXION DE LA RED (DEL 1 AL 6)");
         int potenciaDeWifi=in.nextInt();
 
-        while (potenciaDeWifi<1 & numeroHabitacion>1){
+        while (potenciaDeWifi<1 && potenciaDeWifi>6){
             System.out.println("POTENCIA NO VALIDA, INTRODUZCALA DE NUEVO");
             potenciaDeWifi=in.nextInt();
         }
