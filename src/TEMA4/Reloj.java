@@ -41,6 +41,7 @@ public class Reloj{
         this.segundos = segundos;
     }
 
+
     public Reloj(){
         getHoras();
         getMinutos();
