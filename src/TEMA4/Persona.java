@@ -78,6 +78,6 @@ public class Persona {
 
 
     public String toString(String nombre,String apellido1,String apellido2,int dni,int edad) {
-        return "Persona{" + "dni=" + dni + ", nombre='" + nombre + '\'' + ", apellido1='" + apellido1 + '\'' + ", apellido2='" + apellido2 + '\'' + ", edad=" + edad + '}';
+        return ("Persona{" + "dni=" + dni + ", nombre='" + nombre + '\'' + ", apellido1='" + apellido1 + '\'' + ", apellido2='" + apellido2 + '\'' + ", edad=" + edad + '}');
     }
 }

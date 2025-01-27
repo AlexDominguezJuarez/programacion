@@ -27,9 +27,9 @@ public class PersonaMain {
         System.out.println();
         boolean retirado=persona1.isRetired(edad);
         if (retirado==true){
-            System.out.println(nombre+" está retirado");
+            System.out.println(nombre+" no tiene edad suficiente oara retirarse");
         } else {
-            System.out.println(nombre+" no está retirado");
+            System.out.println(nombre+" tiene edad suficiente para retirarse");
         }
         String caracteriticasPersonaje1= persona1.toString();
         System.out.println(caracteriticasPersonaje1);
