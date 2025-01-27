@@ -19,7 +19,6 @@ public class Reloj{
         this.horas=horas;
         this.minutos=minutos;
         this.segundos=segundos;
-        this.amOPm=amOPm;
 
     }
 
