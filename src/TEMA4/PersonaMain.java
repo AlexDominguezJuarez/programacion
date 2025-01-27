@@ -31,9 +31,9 @@ public class PersonaMain {
         } else {
             System.out.println(nombre+" tiene edad suficiente para retirarse");
         }
-        String caracteriticasPersonaje1= persona1.toString();
-        System.out.println(caracteriticasPersonaje1);
-        
+        System.out.println(persona1.toString(nombre,primerApellido,segundoApellido,dni,edad));
+
+
 
 
     }

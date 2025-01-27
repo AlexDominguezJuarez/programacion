@@ -77,7 +77,7 @@ public class Persona {
     }
 
 
-    public String toString(String nombre,String apellido1,String apellido2,int dni,int edad) {
-        return ("Persona{" + "dni=" + dni + ", nombre='" + nombre + '\'' + ", apellido1='" + apellido1 + '\'' + ", apellido2='" + apellido2 + '\'' + ", edad=" + edad + '}');
+    public String toString (String nombre,String apellido1,String apellido2,int dni,int edad) {
+        return String.format("%s/%s,%s,%f,%f",nombre+" "+apellido1+" "+apellido2+ ", con dni "+dni+" tiene "+edad+" años") ;
     }
 }
