@@ -4,129 +4,139 @@ import javax.management.MBeanRegistration;
 import java.util.Scanner;
 
 public class caesarCifrer {
-    public static String palabraAEncriptar(){
+    public static char[]palabraAEncriptar(){
         Scanner in=new Scanner(System.in);
         System.out.println("Introduce la palabra a encriptar");
         String palabra=in.nextLine();
-        return palabra;
+        char[]cadenaADevolver=new char[palabra.length()];
+        for (int i=0;i<palabra.length();i++) {
+            char letraCadena = palabra.charAt(i);
+
+            cadenaADevolver[i]=switchMayuscula(letraCadena);
+            cadenaADevolver[i]=switchMinuscula(letraCadena);
+        }
+
+        return cadenaADevolver;
     }
 
     public static String palabraADesencriptar(){
         Scanner in=new Scanner(System.in);
         System.out.println("Introduce la palabra a desencriptar");
         String palabra=in.nextLine();
+
         return palabra;
     }
     public static char switchMinuscula(char letra){
         switch (letra){
-            case 'a':
-                letra='b';
+            case 'A':
+                letra='B';
                 break;
-            case 'b':
-                letra='c';
+            case 'B':
+                letra='C';
 
                 break;
-            case 'c':
-                letra='d';
+            case 'C':
+                letra='D';
 
                 break;
-            case 'd':
-                letra='e';
+            case 'D':
+                letra='E';
 
                 break;
-            case 'e':
-                letra='f';
+            case 'E':
+                letra='F';
 
                 break;
-            case 'f':
-                letra='g';
+            case 'F':
+                letra='G';
 
                 break;
-            case 'g':
-                letra='h';
+            case 'G':
+                letra='H';
 
                 break;
-            case 'h':
-                letra='i';
+            case 'H':
+                letra='I';
 
                 break;
-            case 'i':
-                letra='j';
+            case 'I':
+                letra='J';
 
                 break;
-            case 'j':
-                letra='k';
+            case 'J':
+                letra='K';
 
                 break;
-            case 'k':
-                letra='l';
+            case 'K':
+                letra='L';
 
                 break;
-            case 'l':
-                letra='m';
+            case 'L':
+                letra='M';
 
                 break;
-            case 'm':
-                letra='n';
+            case 'M':
+                letra='N';
 
                 break;
-            case 'n':
-                letra='o';
+            case 'N':
+                letra='O';
 
                 break;
-            case 'o':
-                letra='p';
+            case 'O':
+                letra='P';
 
                 break;
-            case 'p':
-                letra='q';
+            case 'P':
+                letra='Q';
 
                 break;
-            case 'q':
-                letra='q';
+            case 'Q':
+                letra='R';
 
                 break;
-            case 'r':
-                letra='s';
+            case 'R':
+                letra='S';
 
                 break;
-            case 's':
-                letra='t';
+            case 'S':
+                letra='T';
 
                 break;
-            case 't':
-                letra='u';
+            case 'T':
+                letra='U';
 
                 break;
-            case 'u':
-                letra='v';
+            case 'U':
+                letra='V';
 
                 break;
-            case 'v':
-                letra='w';
+            case 'V':
+                letra='W';
 
                 break;
-            case 'w':
-                letra='x';
+            case 'W':
+                letra='X';
 
                 break;
-            case 'x':
-                letra='y';
+            case 'X':
+                letra='Y';
 
                 break;
 
-            case 'y':
-                letra='z';
+            case 'Y':
+                letra='Z';
 
                 break;
-            case 'z':
-                letra='a';
+            case 'Z':
+                letra='A';
 
                 break;
 
         }return letra;
 
     }
+
     public static char switchMayuscula(char letra){
         letra=switchMinuscula(letra);
         String palabra=String.valueOf(letra);
@@ -150,7 +160,10 @@ public class caesarCifrer {
         int eleccion=in.nextInt();
         switch (eleccion){
             case 1:
-                String palabraEncripada=palabraAEncriptar();
+                char[]cadenaEncriptada=palabraAEncriptar();
+                for (int i=0;i<cadenaEncriptada.length;i++){
+                    System.out.print(cadenaEncriptada[i]);
+                }
 
 
                 break;
