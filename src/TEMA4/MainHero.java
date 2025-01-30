@@ -38,27 +38,43 @@ public class MainHero {
             int eleccion=in.nextInt();
             switch (eleccion){
                 case 1:
-                    Hero.attack(ataque1,defensa2,vida2,experiencia1,maxVida,vida1,defens1a,nivel1);
+                    hero1.attack(hero2);
                     break;
                 case 2:
-                    Hero.drinkPotion(vida1);
+                    hero1.drinkPotion();
                     break;
             }
-            String estadisticas=Hero.toString(nombre1,vida1,ataque1,defens1a,nivel1);
 
-            System.out.println("Que quiere hacer el jugador 2?\n1. Ataque\n2. Tomar pocion");
-            eleccion=in.nextInt();
-            switch (eleccion){
-                case 1:
-                    Hero.attack(ataque2,defens1a,vida1,experiencia2,maxVida2,vida2,defensa2,nivel2);
-                    break;
-                case 2:
-                    Hero.drinkPotion(vida1);
-                    break;
+                hero1.levelUp();
+
+
+
+            String estadisticas=hero1.toString();
+            System.out.println(estadisticas);
+            System.out.println();
+            if (vida2>0) {
+                System.out.println("Que quiere hacer el jugador 2?\n1. Ataque\n2. Tomar pocion");
+                eleccion = in.nextInt();
+                switch (eleccion) {
+                    case 1:
+                        hero2.attack(hero1);
+                        break;
+                    case 2:
+                        hero2.drinkPotion();
+                        break;
+                }
+
+                hero2.levelUp();
+
+                estadisticas = hero2.toString();
+                System.out.println(estadisticas);
+                System.out.println();
+            }
         }
-            estadisticas=Hero.toString(nombre2,vida2,ataque2,defensa2,nivel2);
-
-
+        if (vida1<0){
+            System.out.println("Gana "+nombre2);
+        } else if (vida2<0) {
+            System.out.println("Gana "+nombre1);
 
         }
     }

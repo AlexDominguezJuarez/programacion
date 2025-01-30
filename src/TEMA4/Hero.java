@@ -21,6 +21,7 @@ public class Hero {
 
 
 
+
     public String getName() {
         return name;
     }
@@ -73,30 +74,44 @@ public class Hero {
         this.defense = defense;
     }
 
+    public int getDefense() {return defense;
+    }
 
-    public static void drinkPotion(int vida){
-        vida=vida+10;
+    public void drinkPotion(){
+        int vidaTemporal=this.health;
+        this.health=+10;
+        int saludRecuperada=this.health-vidaTemporal ;
+        System.out.println("Salud recuperada: "+saludRecuperada);
     }
 
     public static void rest(int vida){
         vida=vida+50;
     }
 
-    public static String toString(String name,int health,int attack,int defense,int level) {
-        return (name+"\nNivel: "+level+"\nVida: "+health+"\nAtaque: "+attack+"\nDefensa: "+defense);
+    public String  toString() {
+        return ("Nombre: "+this.name+"\nNivel: "+this.level+"\nVida: "+this.health+"\nAtaque: "+this.attack+"\nDefensa: "+this.defense+"\nExperiencia: "+this.experience);
     }
 
-    public static void levelUp(int level,int attack,int defense,int maxHealt,int health,int experience){
-        if (experience>=50){
-            level++;attack++;defense++;
-            health=health+5;maxHealt=maxHealt+5;
+    public void levelUp(){
+        if (this.experience>50){
+            this.level++;
+            this.attack++;
+            this.defense++;
+            this.health=+5;
+            this.maxHealt=+5;
+            this.experience=0;
 
+            System.out.println("\n"+this.name+" ha subido de nivel\nAtaque: "+this.attack+"\nDefensa: "+this.defense+"\nVida: "+this.health+"\n");
         }
     }
 
-    public static void attack(int attack1,int defense2,int vida2,int experience1,int maxHealt,int health,int defense,int level){
-        vida2=defense2-attack1;
-        experience1=experience1+10;
-        if (experience1>50){levelUp(level,attack1,defense,maxHealt,health,experience1);}
+    public void attack(Hero otroHeroe) {
+        int dano = Math.max(this.attack - otroHeroe.defense, 10);
+
+        // Reducir la vida del otro héroe
+        otroHeroe.health -= dano;
+
+        // Sumar 10 de experiencia al atacante
+        this.experience += 10;
     }
 }
