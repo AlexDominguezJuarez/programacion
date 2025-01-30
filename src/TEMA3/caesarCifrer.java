@@ -172,8 +172,5 @@ public class caesarCifrer {
 
                 break;
         }
-
-
-
     }
 }
