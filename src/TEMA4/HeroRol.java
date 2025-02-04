@@ -51,7 +51,7 @@ public class HeroRol {
                 ataqueAleatorio=random.nextInt(hero1.getAttack()/10);
                 defensaAleatorioa=random.nextInt(hero1.getDefense()/10);
                 vidaAleatorioa=random.nextInt(hero1.getHealth()/10);
-                nombreEnemigo="";
+                nombreEnemigo="Enemigo 1";
                 ataqueEnemigo= hero1.getAttack()-ataqueAleatorio;
                 defensaEnemigo=hero1.getDefense()-defensaAleatorioa;
                 vidaEnemigo=hero1.getDefense()-vidaAleatorioa;
@@ -68,7 +68,7 @@ public class HeroRol {
                     ataqueAleatorio = random.nextInt(hero1.getAttack() / 10);
                     defensaAleatorioa = random.nextInt(hero1.getDefense() / 10);
                     vidaAleatorioa = random.nextInt(hero1.getHealth() / 10);
-                    nombreEnemigo = "";
+                    nombreEnemigo = "Enemigo 2";
                     ataqueEnemigo = hero1.getAttack() - ataqueAleatorio;
                     defensaEnemigo = hero1.getDefense() - defensaAleatorioa;
                     vidaEnemigo = hero1.getDefense() - vidaAleatorioa;
@@ -80,7 +80,7 @@ public class HeroRol {
                         ataqueAleatorio = random.nextInt(hero1.getAttack() / 10);
                         defensaAleatorioa = random.nextInt(hero1.getDefense() / 10);
                         vidaAleatorioa = random.nextInt(hero1.getHealth() / 10);
-                        nombreEnemigo = "";
+                        nombreEnemigo = "Enemigo 3";
                         ataqueEnemigo = hero1.getAttack() - ataqueAleatorio;
                         defensaEnemigo = hero1.getDefense() - defensaAleatorioa;
                         vidaEnemigo = hero1.getDefense() - vidaAleatorioa;
@@ -92,7 +92,19 @@ public class HeroRol {
             }
             System.out.println("HORDA 1"+numeroCombate);
             numeroCombate++;
-            System.out.println("\nNumero de enemigos: "+cantidadEnemigos);
+            System.out.println("\nNumero de enemigos: "+cantidadEnemigos+"\n");
+            System.out.println("A que enemigo quieres atacar?\nEnemigo 1\nEnemigo 2\n Enemigo 3");
+            int eleccionDeAtaque=in.nextInt();
+            switch (eleccionDeAtaque){
+                case 1:
+
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+            }
+
 
 
         }
