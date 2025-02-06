@@ -6,9 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+
 public class CuentaMain {
-    public static void main(String[] args) {
-        System.out.println("MENU DE BANCO");
+    public static void menu(){
+        System.out.println("\nMENU DE BANCO");
         System.out.println("\nPulse 0 para salir del programa\n");
         System.out.println("1. Crear una nueva persona registrada en el banco");
         System.out.println("2. Crear una nueva cuenta de banco");
@@ -17,6 +18,10 @@ public class CuentaMain {
         System.out.println("5. Recibir un pago");
         System.out.println("6. Realizar una transferencia");
         System.out.println("7. Mostrar lista de morosos");
+    }
+    public static void main(String[] args) {
+        menu();
+
         Scanner in =new Scanner(System.in);
 
         int [] arrayDefecto=new int[0];
@@ -29,6 +34,7 @@ public class CuentaMain {
 
 
         int eleccion=in.nextInt();
+        String basura=in.nextLine();
         while (eleccion!=0){
 
             switch (eleccion) {
@@ -52,6 +58,7 @@ public class CuentaMain {
                     int numeroDeCuenta=in.nextInt();
                     System.out.println("Introduce tu dni");
                     dni=in.nextLine();
+                    basura=in.nextLine();
                     int dineroDeCuenta=0;
                     for (PersonaBanco persona : personasRegistradas) {
                         if (persona.getDni().equals(dni)){
@@ -68,6 +75,7 @@ public class CuentaMain {
                     System.out.println("Introduce tu dni para saber tus datos personales");
                     personaEncontrada=personaPorDefecto;
                     dni=in.nextLine();
+                    basura=in.nextLine();
                     for (PersonaBanco personaRecorrer:personasRegistradas) {
                         if (personaRecorrer.getDni().equals(dni)){
                             personaEncontrada=personaRecorrer;
@@ -88,10 +96,16 @@ public class CuentaMain {
                     System.out.println("Lista de MOROSOS");
                     List<PersonaBanco>personasMorosas=new ArrayList<>();
                     for (PersonaBanco recorrerLista:personasRegistradas){
-                        if (recorrerLista.)
+                        if (recorrerLista.isMoroso()==true){
+                            personasMorosas.add(recorrerLista);
+                        }
                     }
+                     System.out.println(personasMorosas);
                     break;
             }
+            menu();
+            eleccion=in.nextInt();
+            basura=in.nextLine();
         }
     }
 }

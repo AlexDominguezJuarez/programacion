@@ -59,6 +59,7 @@ public class PersonaBanco {
         }
     }
 
+
     public boolean isMoroso() {
         return moroso;
     }
