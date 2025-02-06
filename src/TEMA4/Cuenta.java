@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class Cuenta {
     private int numeroDeCuenta=0;
     private int saldoCuenta=0;
-    public Cuenta(int numeroDeCuenta,int saldoCuenta){
+
+    public Cuenta(int numeroDeCuenta,int saldoCuenta,String dniDueño){
+
         this.numeroDeCuenta=numeroDeCuenta;
         this.saldoCuenta=saldoCuenta;
     }

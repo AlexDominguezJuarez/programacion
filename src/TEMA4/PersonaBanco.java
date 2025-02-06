@@ -14,23 +14,24 @@ public class PersonaBanco {
         this.numeroDeCuentas=numeroDeCuentas;
         this.moroso=moroso;
     }
-    public void crearCuentaBancaria(int []cuentasBancarias,int numeroDeCuentas){
+    public void crearCuentaBancaria(){
         Scanner in =new Scanner(System.in);
         if (this.numeroDeCuentas>3){
             System.out.println("Lo siento, no puedes crear mas cuentas");
         }else{
+            this.numeroDeCuentas++;
             System.out.println("Introduce el nuevo numero de cuenta");
             int nuevaCuenta=in.nextInt();
             switch (this.numeroDeCuentas){
                 case 0:
-                    cuentasBancarias[0]=nuevaCuenta;
+                    this.cuentasBancarias[0]=nuevaCuenta;
                     break;
                 case 1:
-                    cuentasBancarias[1]=nuevaCuenta;
+                    this.cuentasBancarias[1]=nuevaCuenta;
 
                     break;
                 case 2:
-                    cuentasBancarias[2]=nuevaCuenta;
+                    this.cuentasBancarias[2]=nuevaCuenta;
 
                     break;
             }
@@ -47,4 +48,46 @@ public class PersonaBanco {
         }
     }
 
+    public void mostrarDatos(){
+        System.out.println("DNI: "+this.dni+"\nNumero de cuentas: "+this.numeroDeCuentas);
+        if (this.moroso==true){
+            System.out.println("MOROSO: Si");
+        }else {
+            System.out.println("MOROSO: No");
+        }for (int i =0;i<this.numeroDeCuentas;i++){
+            System.out.print(cuentasBancarias[i]);
+        }
+    }
+
+    public boolean isMoroso() {
+        return moroso;
+    }
+
+    public void setMoroso(boolean moroso) {
+        this.moroso = moroso;
+    }
+
+    public int getNumeroDeCuentas() {
+        return numeroDeCuentas;
+    }
+
+    public void setNumeroDeCuentas(int numeroDeCuentas) {
+        this.numeroDeCuentas = numeroDeCuentas;
+    }
+
+    public int[] getCuentasBancarias() {
+        return cuentasBancarias;
+    }
+
+    public void setCuentasBancarias(int[] cuentasBancarias) {
+        this.cuentasBancarias = cuentasBancarias;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
 }
