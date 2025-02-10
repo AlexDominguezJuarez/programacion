@@ -6,7 +6,7 @@ public class Cuenta {
     private int numeroDeCuenta=0;
     private int saldoCuenta=0;
 
-    public Cuenta(int numeroDeCuenta,int saldoCuenta,String dniDueño){
+    public Cuenta(int numeroDeCuenta,int saldoCuenta){
 
         this.numeroDeCuenta=numeroDeCuenta;
         this.saldoCuenta=saldoCuenta;
@@ -27,6 +27,7 @@ public class Cuenta {
     public void setSaldoCuenta(int saldoCuenta) {
         this.saldoCuenta = saldoCuenta;
     }
+
     public void consultarSaldo(int saldoCuenta){
         System.out.println("El saldo de la cuenta que tienes es "+this.getSaldoCuenta()+"€");
     }
@@ -37,6 +38,18 @@ public class Cuenta {
         this.saldoCuenta-=importeAPagar;
         saldoCuenta2+=importeAPagar;
     }
-   // public void recibirAbono(int )
+    public void recibirNominas(PersonaBanco persona,int dinero){
 
+        this.saldoCuenta=+dinero;
+    }
+    public void pagar(PersonaBanco persona,int dineroAPagar){
+        this.saldoCuenta=-dineroAPagar;
+    }
+
+    public void transferencia(PersonaBanco personaPaga,PersonaBanco personaRecibe,int dineros,Cuenta cuentaPaga){
+        this.saldoCuenta=+dineros;
+        cuentaPaga.saldoCuenta=-dineros;
+
+
+    }
 }

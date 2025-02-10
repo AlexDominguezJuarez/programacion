@@ -53,12 +53,13 @@ public class CuentaMain {
 
                     break;
                 case 2:
-                    PersonaBanco personaEncontrada = personaPorDefecto;
+                    PersonaBanco personaEncontrada = null;
                     System.out.println("Introduzca su nuevo numero de cuenta");
                     int numeroDeCuenta=in.nextInt();
                     System.out.println("Introduce tu dni");
-                    dni=in.nextLine();
                     basura=in.nextLine();
+                    dni=in.nextLine();
+
                     int dineroDeCuenta=0;
                     for (PersonaBanco persona : personasRegistradas) {
                         if (persona.getDni().equals(dni)){
@@ -66,12 +67,20 @@ public class CuentaMain {
 
                         }
                     }
-                    Cuenta cuenta1=new Cuenta(numeroDeCuenta,dineroDeCuenta,personaEncontrada.getDni());
-                    System.out.println("Cuenta creada con exito");
-                    cuentasRegistradas.add(cuenta1);
+                    if (personaEncontrada!=null){
+                        Cuenta cuenta1=new Cuenta(numeroDeCuenta,dineroDeCuenta);
+                        System.out.println("Cuenta creada con exito");
+                        cuentasRegistradas.add(cuenta1);
+                        personaEncontrada.crearCuentaBancaria(cuenta1);
+                    }else {
+                        System.out.println("Persona no encontrada");
+                    }
+
+
 
                     break;
                 case 3:
+                    personaEncontrada=null;
                     System.out.println("Introduce tu dni para saber tus datos personales");
                     personaEncontrada=personaPorDefecto;
                     dni=in.nextLine();
@@ -84,12 +93,95 @@ public class CuentaMain {
 
                     break;
                 case 4:
+                    personaEncontrada=null;
+                    Cuenta cuentaEncontrada=null;
+                    System.out.println("Porfavor introduzca su dni");
+                    dni=in.nextLine();
+                    System.out.println("Porfavor introduzca su numero de cuenta\n");
+
+                    numeroDeCuenta=in.nextInt();
+                    int nomina=1200;
+                    for (PersonaBanco personaABuscar:personasRegistradas){
+                        if (personaABuscar.getDni().equals(dni)){
+                            personaEncontrada=personaABuscar;
+
+                        }
+                    }
+                    for (Cuenta recorrerCuentas:cuentasRegistradas){
+                        if (recorrerCuentas.getNumeroDeCuenta()==numeroDeCuenta){
+                            cuentaEncontrada=recorrerCuentas;
+                        }
+                    }
+                    if ((personaEncontrada!=null)&&(cuentaEncontrada!=null)){
+                        cuentaEncontrada.recibirNominas(personaEncontrada,nomina);
+                        System.out.println("Nomina recibida con exito");
+                    }else {
+                        System.out.println("No se ha podido completar la operacion");
+                    }
 
                     break;
                 case 5:
+                    personaEncontrada=null;
+                    cuentaEncontrada=null;
+                    System.out.println("Porfavor introduzca su dni");
+                    dni=in.nextLine();
+                    System.out.println("Porfavor introduzca su numero de cuenta\n");
+                    numeroDeCuenta=in.nextInt();
+                    for (PersonaBanco personaABuscar:personasRegistradas){
+                        if (personaABuscar.getDni().equals(dni)){
+                            personaEncontrada=personaABuscar;
+
+                        }
+                    }
+                    for (Cuenta recorrerCuentas:cuentasRegistradas){
+                        if (recorrerCuentas.getNumeroDeCuenta()==numeroDeCuenta){
+                            cuentaEncontrada=recorrerCuentas;
+                        }
+                    }
+                    System.out.println("Introduzca el pago que va a realizar");
+                    int dineroAPagar=in.nextInt();
+                    if ((cuentaEncontrada!=null)&&(personaEncontrada!=null)){
+                        cuentaEncontrada.pagar(personaEncontrada,dineroAPagar);
+                    }
+
+
 
                     break;
                 case 6:
+                    personaEncontrada=null;
+                    cuentaEncontrada=null;
+                    System.out.println("PERSONA QUE PAGA");
+                    System.out.println("Porfavor introduzca su dni");
+                    dni=in.nextLine();
+                    System.out.println("Porfavor introduzca su numero de cuenta\n");
+                    numeroDeCuenta=in.nextInt();
+                    System.out.println("PERSONA QUE COBRA");
+                    PersonaBanco personaEcontrada2=null;
+                    Cuenta cuentaEncontrada2=null;
+                    System.out.println("Porfavor introduzca su numero de cuenta\n");
+                    int numeroDeCuenta2=in.nextInt();
+                    for (PersonaBanco personaABuscar:personasRegistradas){
+                        if (personaABuscar.getDni().equals(dni)){
+                            personaEncontrada=personaABuscar;
+
+                        }
+                    }
+                    for (Cuenta recorrerCuentas:cuentasRegistradas){
+                        if (recorrerCuentas.getNumeroDeCuenta()==numeroDeCuenta){
+                            cuentaEncontrada=recorrerCuentas;
+                        }
+                    }
+                    for (Cuenta recorrerCuentas:cuentasRegistradas){
+                        if (recorrerCuentas.getNumeroDeCuenta()==numeroDeCuenta){
+                            cuentaEncontrada2=recorrerCuentas;
+                        }
+                    }
+                    System.out.println("Introduzca la cantidada de la transferencia");
+                    dineroAPagar=in.nextInt();
+                    if ((cuentaEncontrada!=null)&&(cuentaEncontrada2!=null)&&(personaEncontrada!=null)){
+                        cuentaEncontrada.transferencia(personaEncontrada,personaEcontrada2,dineroAPagar,cuentaEncontrada2);
+                    }
+
 
                     break;
                 case 7:
@@ -105,7 +197,7 @@ public class CuentaMain {
             }
             menu();
             eleccion=in.nextInt();
-            basura=in.nextLine();
+            in.nextLine();
         }
     }
 }

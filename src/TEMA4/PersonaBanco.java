@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class PersonaBanco {
     private String dni="";
-    private int [] cuentasBancarias;
+    private int [] cuentasBancarias=new int[3];
     private int numeroDeCuentas=0;
     private boolean moroso=false;
 
@@ -14,24 +14,23 @@ public class PersonaBanco {
         this.numeroDeCuentas=numeroDeCuentas;
         this.moroso=moroso;
     }
-    public void crearCuentaBancaria(){
+    public void crearCuentaBancaria(Cuenta cuenta){
         Scanner in =new Scanner(System.in);
         if (this.numeroDeCuentas>3){
             System.out.println("Lo siento, no puedes crear mas cuentas");
         }else{
             this.numeroDeCuentas++;
-            System.out.println("Introduce el nuevo numero de cuenta");
-            int nuevaCuenta=in.nextInt();
+
             switch (this.numeroDeCuentas){
                 case 0:
-                    this.cuentasBancarias[0]=nuevaCuenta;
+                    this.cuentasBancarias[this.numeroDeCuentas]=cuenta.getNumeroDeCuenta();
                     break;
                 case 1:
-                    this.cuentasBancarias[1]=nuevaCuenta;
+                    this.cuentasBancarias[this.numeroDeCuentas]=cuenta.getNumeroDeCuenta();
 
                     break;
                 case 2:
-                    this.cuentasBancarias[2]=nuevaCuenta;
+                    this.cuentasBancarias[this.numeroDeCuentas]=cuenta.getNumeroDeCuenta();
 
                     break;
             }
@@ -91,4 +90,5 @@ public class PersonaBanco {
     public void setDni(String dni) {
         this.dni = dni;
     }
+
 }
