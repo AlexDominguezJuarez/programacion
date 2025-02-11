@@ -16,7 +16,7 @@ public class PersonaBanco {
     }
     public void crearCuentaBancaria(Cuenta cuenta){
         Scanner in =new Scanner(System.in);
-        if (this.numeroDeCuentas>3){
+        if (this.numeroDeCuentas>=3){
             System.out.println("Lo siento, no puedes crear mas cuentas");
         }else{
             this.numeroDeCuentas++;
@@ -54,7 +54,7 @@ public class PersonaBanco {
         }else {
             System.out.println("MOROSO: No");
         }for (int i =0;i<this.numeroDeCuentas;i++){
-            System.out.print(cuentasBancarias[i]);
+            System.out.println(cuentasBancarias[i]);
         }
     }
 

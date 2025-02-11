@@ -69,7 +69,6 @@ public class CuentaMain {
                     }
                     if (personaEncontrada!=null){
                         Cuenta cuenta1=new Cuenta(numeroDeCuenta,dineroDeCuenta);
-                        System.out.println("Cuenta creada con exito");
                         cuentasRegistradas.add(cuenta1);
                         personaEncontrada.crearCuentaBancaria(cuenta1);
                     }else {
@@ -84,7 +83,6 @@ public class CuentaMain {
                     System.out.println("Introduce tu dni para saber tus datos personales");
                     personaEncontrada=personaPorDefecto;
                     dni=in.nextLine();
-                    basura=in.nextLine();
                     for (PersonaBanco personaRecorrer:personasRegistradas) {
                         if (personaRecorrer.getDni().equals(dni)){
                             personaEncontrada=personaRecorrer;
