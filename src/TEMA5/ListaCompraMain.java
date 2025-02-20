@@ -21,7 +21,6 @@ public class ListaCompraMain {
                 }
             }
 
-
             if (comprobacion==true){
                 ListaCompra cosaQueComprar=new ListaCompra(objetoCompra);
                 listaDeLaCompra.add(cosaQueComprar);
