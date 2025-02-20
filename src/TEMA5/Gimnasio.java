@@ -82,29 +82,37 @@ public class Gimnasio {
                     }
                     menu();
                     eleccion = in.nextInt();
+                    usuarioExistente=true;
                     break;
                 case 3:
                     System.out.println("Introduce tu nombre");
-                    in.nextLine();
                     nombreUsuario = in.nextLine();
-                    System.out.println("Introduce tu dni");
                     in.nextLine();
+
+                    System.out.println("Introduce tu dni");
                     dniUsuario = in.nextLine();
                     System.out.println("Introduce tu edad");
                     edadUsuario = in.nextInt();
                     for (Usuario recorrerLista : listaDeUsuarios) {
                         if ((dniUsuario.equals(recorrerLista.getDni())) && (edadUsuario == recorrerLista.getEdad())) {
+                            usuarioExistente = true;
+                            numerito=listaDeUsuarios.size();
+                        }
+                        if (usuarioExistente==true){
                             recorrerLista.mostrarDatos();
-                        } else {
-                            System.out.println("Usuario no encontrado");
+                            usuarioExistente=false;
                         }
                     }
+
+
                     menu();
                     eleccion = in.nextInt();
                     break;
                 case 4:
-                    System.out.println("Introduce tu dni");
+                    System.out.println("Introduce tu nombre");
+                    nombreUsuario = in.nextLine();
                     in.nextLine();
+                    System.out.println("Introduce tu dni");
                     dniUsuario = in.nextLine();
                     System.out.println("Introduce tu edad");
                     edadUsuario = in.nextInt();
@@ -116,22 +124,23 @@ public class Gimnasio {
                             switch (eleccion) {
                                 case 1:
                                     System.out.println("Introduce el nuevo nombre");
+                                    in.nextLine();
                                     String nuevoNombre = in.nextLine();
                                     recorrerLista.setNombreUsuario(nuevoNombre);
                                     break;
                                 case 2:
                                     System.out.println("Introduce el nuevo dni");
+                                    in.nextLine();
                                     String nuevoDni = in.nextLine();
                                     recorrerLista.setDni(nuevoDni);
                                     break;
                                 case 3:
                                     System.out.println("Introduce la nueva edad");
+                                    in.nextLine();
                                     int nuevaEdad = in.nextInt();
                                     recorrerLista.setEdad(nuevaEdad);
                                     break;
                             }
-                        } else {
-                            System.out.println("Usuario no encontrado");
                         }
                     }
                     menu();
