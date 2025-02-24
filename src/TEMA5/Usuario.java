@@ -11,9 +11,9 @@ public class Usuario {
     }
 
     public void mostrarDatos(){
-        System.out.println("Nombre: "+this.nombre);
-        System.out.println("DNI: "+this.dni);;
-        System.out.println("Edad: "+this.edad);
+        System.out.print("Nombre: "+this.nombre);
+        System.out.print("  DNI: "+this.dni);
+        System.out.print("  Edad: "+this.edad);
     }
 
     public String getNombreUsuario() {

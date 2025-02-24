@@ -44,7 +44,7 @@ public class Gimnasio {
                     System.out.println("Introduce tu edad");
                     int edadUsuario = in.nextInt();
                     for (Usuario recorrerLista : listaDeUsuarios) {
-                        if ((dniUsuario.equals(recorrerLista.getDni())) && (edadUsuario == recorrerLista.getEdad())) {
+                        if ((dniUsuario.equals(recorrerLista.getDni())) ) {
                             System.out.println("Usuario ya creado");
                             usuarioExistente = true;
                         }
@@ -61,15 +61,12 @@ public class Gimnasio {
 
                     break;
                 case 2:
-                    System.out.println("Introduce tu nombre");
-                    in.nextLine();
-                    nombreUsuario = in.nextLine();
+
                     System.out.println("Introduce tu dni");
                     dniUsuario = in.nextLine();
-                    System.out.println("Introduce tu edad");
-                    edadUsuario = in.nextInt();
+
                     for (Usuario recorrerLista : listaDeUsuarios) {
-                        if ((dniUsuario.equals(recorrerLista.getDni())) && (edadUsuario == recorrerLista.getEdad())) {
+                        if ((dniUsuario.equals(recorrerLista.getDni())) ) {
                             numerito=listaDeUsuarios.size();
                             usuarioExistente=false;
                         }
@@ -85,16 +82,13 @@ public class Gimnasio {
                     usuarioExistente=true;
                     break;
                 case 3:
-                    System.out.println("Introduce tu nombre");
-                    nombreUsuario = in.nextLine();
-                    in.nextLine();
+
 
                     System.out.println("Introduce tu dni");
                     dniUsuario = in.nextLine();
-                    System.out.println("Introduce tu edad");
-                    edadUsuario = in.nextInt();
+
                     for (Usuario recorrerLista : listaDeUsuarios) {
-                        if ((dniUsuario.equals(recorrerLista.getDni())) && (edadUsuario == recorrerLista.getEdad())) {
+                        if ((dniUsuario.equals(recorrerLista.getDni())) ) {
                             usuarioExistente = true;
                             numerito=listaDeUsuarios.size();
                         }
@@ -109,15 +103,12 @@ public class Gimnasio {
                     eleccion = in.nextInt();
                     break;
                 case 4:
-                    System.out.println("Introduce tu nombre");
-                    nombreUsuario = in.nextLine();
-                    in.nextLine();
+
                     System.out.println("Introduce tu dni");
                     dniUsuario = in.nextLine();
-                    System.out.println("Introduce tu edad");
-                    edadUsuario = in.nextInt();
+
                     for (Usuario recorrerLista : listaDeUsuarios) {
-                        if ((dniUsuario.equals(recorrerLista.getDni())) && (edadUsuario == recorrerLista.getEdad())) {
+                        if ((dniUsuario.equals(recorrerLista.getDni())) ) {
                             System.out.println("¿Que dato quieres modificar?");
                             menuModificacion();
                             eleccion = in.nextInt();
@@ -127,18 +118,23 @@ public class Gimnasio {
                                     in.nextLine();
                                     String nuevoNombre = in.nextLine();
                                     recorrerLista.setNombreUsuario(nuevoNombre);
+                                    System.out.println("Nombre cambiado correctamete");
                                     break;
                                 case 2:
                                     System.out.println("Introduce el nuevo dni");
                                     in.nextLine();
                                     String nuevoDni = in.nextLine();
                                     recorrerLista.setDni(nuevoDni);
+                                    System.out.println("DNI cambiado correctamete");
+
                                     break;
                                 case 3:
                                     System.out.println("Introduce la nueva edad");
                                     in.nextLine();
                                     int nuevaEdad = in.nextInt();
                                     recorrerLista.setEdad(nuevaEdad);
+                                    System.out.println("Edad cambiada correctamete");
+
                                     break;
                             }
                         }
