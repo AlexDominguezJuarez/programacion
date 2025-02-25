@@ -23,7 +23,7 @@ public class Ejercicio4 {
 
         }catch (InputMismatchException exceptionI){
             System.out.println("Valor incorrecto, introduzca un numero");
-        }catch (ExcepcionesEjerc){
+        }catch (MatchException exception){
                 System.out.println("Introduzca un numero del 1 al 10");
             }
         }
