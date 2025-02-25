@@ -1,4 +1,4 @@
-package TEMA5;
+package TEMA5.ARRAYLIST;
 
 public class Usuario {
     private String nombre="";

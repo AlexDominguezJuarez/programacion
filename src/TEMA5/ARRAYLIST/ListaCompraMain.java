@@ -1,4 +1,4 @@
-package TEMA5;
+package TEMA5.ARRAYLIST;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +13,8 @@ public class ListaCompraMain {
         System.out.println("0. Salir");
     }
     public static void main(String[] args) {
-        System.out.println("LISTA DE LA COMPR\nPULSE 0 PARA SALIR\n");
+        System.out.println("LISTA DE LA COMPRA\nPULSE 0 PARA SALIR\n");
         Scanner in=new Scanner(System.in);
-        ListaCompra cosasQueComprar;
         String nombreProducto;
         int numeritoPosicion=0;
 
@@ -27,7 +26,6 @@ public class ListaCompraMain {
 
         List<ListaCompra>listaDeLaCompra=new ArrayList<>();
         List<ListaCompra>carritoDeLaCompra=new ArrayList<>();
-        cosasQueComprar=new ListaCompra(objetoListaCompra);
         while (!objetoListaCompra.equals("0")){
             for (ListaCompra recorrerLista:listaDeLaCompra){
                 if (objetoListaCompra.equals(recorrerLista.getAlimento())){

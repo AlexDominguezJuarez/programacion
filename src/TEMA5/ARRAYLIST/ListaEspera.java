@@ -1,4 +1,4 @@
-package TEMA5;
+package TEMA5.ARRAYLIST;
 
 import java.util.ArrayList;
 import java.util.List;

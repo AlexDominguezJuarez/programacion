@@ -22,14 +22,14 @@ public class PersonaBanco {
             this.numeroDeCuentas++;
 
             switch (this.numeroDeCuentas){
-                case 0:
+                case 1:
                     this.cuentasBancarias[this.numeroDeCuentas]=cuenta.getNumeroDeCuenta();
                     break;
-                case 1:
+                case 2:
                     this.cuentasBancarias[this.numeroDeCuentas]=cuenta.getNumeroDeCuenta();
 
                     break;
-                case 2:
+                case 3:
                     this.cuentasBancarias[this.numeroDeCuentas]=cuenta.getNumeroDeCuenta();
 
                     break;

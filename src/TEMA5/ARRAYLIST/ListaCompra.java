@@ -1,7 +1,9 @@
-package TEMA5;
+package TEMA5.ARRAYLIST;
 
 public class ListaCompra {
+
     private String alimento;
+
     public  ListaCompra(String alimento){
         this.alimento=alimento;
     }
