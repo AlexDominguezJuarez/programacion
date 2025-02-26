@@ -117,6 +117,23 @@ public class Vehiculo {
             super(marca, color, ruedas);
             this.cilindradaMotor=cilindradaMotor;
             this.necesitaCarnet=necesitaCarnet;
+
+        }
+
+        public int getCilindradaMotor() {
+            return cilindradaMotor;
+        }
+
+        public void setCilindradaMotor(int cilindradaMotor) {
+            this.cilindradaMotor = cilindradaMotor;
+        }
+
+        public Carnet getNecesitaCarnet() {
+            return necesitaCarnet;
+        }
+
+        public void setNecesitaCarnet(Carnet necesitaCarnet) {
+            this.necesitaCarnet = necesitaCarnet;
         }
     }
 }
