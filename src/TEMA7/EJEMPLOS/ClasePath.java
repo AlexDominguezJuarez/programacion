@@ -1,4 +1,4 @@
-package TEMA7;
+package TEMA7.EJEMPLOS;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Iterator;
