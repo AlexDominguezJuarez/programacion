@@ -9,7 +9,6 @@ import java.util.Scanner;
 public class OrdenandoArchivos {
     public static void main(String[] args) {
         String archivoLectura="Documentos/usa_personas.txt";
-        String archivoEscritura="Documentos/usa_personas_sort.txt";
 
         List<String> nombres=new ArrayList<>();
 
