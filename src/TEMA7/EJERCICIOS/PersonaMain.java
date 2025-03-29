@@ -16,6 +16,19 @@ public class PersonaMain {
 
         }
 
+        Persona persona;
+        PersonaInput entrada;
 
+        entrada = new PersonaInput();
+        try {
+            entrada.abrir();
+            do{
+                persona = entrada.leer();
+
+            }while ((persona!=null));
+            entrada.cerrar();
+        }catch (Exception e){
+
+        }
     }
 }
