@@ -1,8 +1,9 @@
 package TEMA7.EJERCICIOS;
 
+import TEMA7.EJERCICIOS.SERIALIZACION.Persona;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 
 public class ContactoOutput {

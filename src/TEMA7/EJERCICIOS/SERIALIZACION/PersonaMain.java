@@ -1,4 +1,4 @@
-package TEMA7.EJERCICIOS;
+package TEMA7.EJERCICIOS.SERIALIZACION;
 
 public class PersonaMain {
     public static void main(String[] args) {

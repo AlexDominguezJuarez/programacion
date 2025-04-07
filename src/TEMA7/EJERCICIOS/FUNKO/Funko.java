@@ -25,7 +25,7 @@ public class Funko {
                 ", nombre='" + nombre + '\'' +
                 ", modelo='" + modelo + '\'' +
                 ", precio='" + precio + '\'' +
-                ", fechaLanzamiento='" + fechaLanzamiento + '\'';
+                ", fecha de lanzamiento='" + fechaLanzamiento + '\'';
     }
 
     public String getPrecio() {

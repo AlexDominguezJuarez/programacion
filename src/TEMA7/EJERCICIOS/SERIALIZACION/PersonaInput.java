@@ -1,4 +1,4 @@
-package TEMA7.EJERCICIOS;
+package TEMA7.EJERCICIOS.SERIALIZACION;
 
 import java.io.EOFException;
 import java.io.FileInputStream;

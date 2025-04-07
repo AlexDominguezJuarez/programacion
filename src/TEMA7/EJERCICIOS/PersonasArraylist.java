@@ -1,6 +1,7 @@
 package TEMA7.EJERCICIOS;
 
-import java.awt.*;
+import TEMA7.EJERCICIOS.SERIALIZACION.Persona;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
