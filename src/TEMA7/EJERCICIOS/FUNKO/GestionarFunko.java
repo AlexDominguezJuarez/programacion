@@ -89,6 +89,7 @@ public class GestionarFunko {
                     break;
                 case 2:
                     System.out.println("Introduce el codigo del funko a buscar: ");
+                    in.nextLine();
                     String codigoABorrar = in.nextLine();
                     for (Funko funkoLista : funkos) {
                         String codigoFunko = funkoLista.getCodigo();
