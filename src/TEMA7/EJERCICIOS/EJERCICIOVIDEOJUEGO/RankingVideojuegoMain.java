@@ -1,19 +1,19 @@
 package TEMA7.EJERCICIOS.EJERCICIOVIDEOJUEGO;
 
+import java.io.*;
 import java.lang.runtime.SwitchBootstraps;
 import java.util.*;
 
 public class RankingVideojuegoMain {
 
     public static void mostrarRanking(List<Videojuego> listaVideojuegos) {
-        listaVideojuegos.sort((j1, j2) -> Double.compare(j1.getNota(), j2.getNota()));
         for (Videojuego juego:listaVideojuegos){
-            System.out.println(juego);
+            System.out.println(juego.getNombre());
         }
     }
 
     public static void menu(){
-        System.out.println("MENU DE RANKING DE VIDEOJUEGOS");
+        System.out.println("\nMENU DE RANKING DE VIDEOJUEGOS");
         System.out.println("PULSE 0 PARA SALIR\n");
         System.out.println("1. Añadir videojuego");
         System.out.println("2. Mostrar ranking completo");
@@ -22,11 +22,12 @@ public class RankingVideojuegoMain {
         System.out.println("5. Cargar ranking desde fichero");
         System.out.println("6. Exportar ranking a texto");
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ClassNotFoundException {
         //FUNCIONES Y VARIABLES
         Scanner in=new Scanner(System.in);
 
         double pesoJuego;
+
         int eleccion=1;
         int eleccion2;
         int eleccion3;
@@ -44,6 +45,7 @@ public class RankingVideojuegoMain {
         Map<String, Videojuego> mapVideojuegos=new HashMap<>();
 
         List <Videojuego> listaVideojuegos=new ArrayList<>();
+        List<Videojuego> listaImportada=new ArrayList<>();
 
 
 
@@ -93,8 +95,16 @@ public class RankingVideojuegoMain {
                     }
                     break;
                 case 2:
-                    mostrarRanking(listaVideojuegos);
+                    Collections.sort(listaVideojuegos, new Comparator<Videojuego>() {
+                        @Override
+                        public int compare(Videojuego o1, Videojuego o2) {
+                            return Integer.compare(o2.getNota(),o1.getNota());
+                        }
+                    });
 
+                    for(Videojuego recorrerArraylist:listaVideojuegos){
+                        System.out.println("Nota: "+recorrerArraylist.getNota()+"Titulo: "+recorrerArraylist.getNombre());
+                    }
 
                     break;
                 case 3:
@@ -110,13 +120,44 @@ public class RankingVideojuegoMain {
                     }
                     break;
                 case 4:
+                    VideojuegoOutput guardarVideojuego =new VideojuegoOutput();
+                    guardarVideojuego.abrir();
+                    for (Videojuego recorrerArray:listaVideojuegos){
+                        guardarVideojuego.escribir(recorrerArray);
+                    }
+                    guardarVideojuego.cerrar();
                     break;
                 case 5:
+                    VideojuegoInput importarRanking=new VideojuegoInput();
+
+                    importarRanking.abrir();
+                    listaVideojuegos=importarRanking.leer();
+                    importarRanking.cerrar();
                     break;
                 case 6:
+
+                    try {
+                        FileWriter file = new FileWriter("/home/aledomjua/IdeaProjects/programacion/src/TEMA7/FICHEROS_EJERCICIOS/ranking.txt");
+
+                        BufferedWriter output = new BufferedWriter(file);
+                        for (Videojuego recorrerArraylist:listaVideojuegos){
+                            output.write(recorrerArraylist.toString());
+                            output.newLine();
+                        }
+                        System.out.println("Ranking escrito con exito\n");
+                        output.close();
+
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
                     break;
+
+                case 7:
+
+
+                    }
             }
         }
-
     }
+    public static void cargar(List<Videojuego> )
 }
