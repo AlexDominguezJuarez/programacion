@@ -1,6 +1,8 @@
 package TEMA7.EJERCICIOS.FUNKO;
 
-public class Funko {
+import java.io.Serializable;
+
+public class Funko implements Serializable {
 
     private String codigo;
     private String modelo;
@@ -9,7 +11,7 @@ public class Funko {
     private String fechaLanzamiento;
 
 
-    public Funko(String codigo, String modelo, String nombre, String precio, String fechaLanzamiento) {
+    public Funko(String codigo, String nombre, String modelo, String precio, String fechaLanzamiento) {
         this.codigo = codigo;
         this.modelo=modelo;
         this.nombre=nombre;
