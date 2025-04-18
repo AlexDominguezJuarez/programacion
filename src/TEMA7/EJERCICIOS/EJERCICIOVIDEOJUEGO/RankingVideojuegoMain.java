@@ -6,10 +6,11 @@ import java.util.*;
 
 public class RankingVideojuegoMain {
 
-    public static void mostrarRanking(List<Videojuego> listaVideojuegos) {
+    public static void mostrarRanking(List<Videojuego> listaVideojuegos) throws IOException, ClassNotFoundException {
         for (Videojuego juego : listaVideojuegos) {
             System.out.println(juego.getNombre());
         }
+    }
 
 
         public static void menu () {
@@ -22,7 +23,8 @@ public class RankingVideojuegoMain {
             System.out.println("5. Cargar ranking desde fichero");
             System.out.println("6. Exportar ranking a texto");
         }
-        public static void main (String[]args) throws IOException, ClassNotFoundException {
+
+        public static void main (String[] args)  {
             //FUNCIONES Y VARIABLES
             Scanner in = new Scanner(System.in);
 
@@ -102,7 +104,7 @@ public class RankingVideojuegoMain {
                         });
 
                         for (Videojuego recorrerArraylist : listaVideojuegos) {
-                            System.out.println("Nota: " + recorrerArraylist.getNota() + "Titulo: " + recorrerArraylist.getNombre());
+                            System.out.println("Nota: " + recorrerArraylist.getNota() + " Titulo: " + recorrerArraylist.getNombre());
                         }
 
                         break;
@@ -120,23 +122,41 @@ public class RankingVideojuegoMain {
                         break;
                     case 4:
                         VideojuegoOutput guardarVideojuego = new VideojuegoOutput();
-                        guardarVideojuego.abrir();
-                        for (Videojuego recorrerArray : listaVideojuegos) {
-                            guardarVideojuego.escribir(recorrerArray);
+                        try {
+                            guardarVideojuego.abrir();
+                            for (Videojuego recorrerArray : listaVideojuegos) {
+                                guardarVideojuego.escribir(recorrerArray);
+                            }
+                            guardarVideojuego.cerrar();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
                         }
-                        guardarVideojuego.cerrar();
+
                         break;
                     case 5:
                         VideojuegoInput importarRanking = new VideojuegoInput();
+                        Videojuego nuevoVideojuego=null;
 
-                        importarRanking.abrir();
-                        listaVideojuegos = importarRanking.leer();
-                        importarRanking.cerrar();
+                        try {
+                            importarRanking.abrir();
+                            while ((nuevoVideojuego = importarRanking.leer()) != null) {
+                                listaVideojuegos.add(nuevoVideojuego);
+                            }
+                            importarRanking.cerrar();
+
+                        }
+                        catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                        catch (ClassNotFoundException e) {
+                            throw new RuntimeException(e);
+                        }
+
                         break;
                     case 6:
 
                         try {
-                            FileWriter file = new FileWriter("/home/aledomjua/IdeaProjects/programacion/src/TEMA7/FICHEROS_EJERCICIOS/ranking.txt");
+                            FileWriter file = new FileWriter("C:\\Users\\Lenovo\\IdeaProjects\\programacion\\src\\TEMA7\\EJERCICIOS\\EJERCICIOVIDEOJUEGO\\ranking.txt");
 
                             BufferedWriter output = new BufferedWriter(file);
                             for (Videojuego recorrerArraylist : listaVideojuegos) {
@@ -151,16 +171,8 @@ public class RankingVideojuegoMain {
                         }
                         break;
 
-                    case 7:
-
-
                 }
             }
         }
     }
 
-    public static void cargar(List<Videojuego> listaVideojuego){
-        String ruta = "/home/aledomjua/IdeaProjects/programacion/src/TEMA7/FICHEROS_EJERCICIOS/ranking.dat";
-        try(ObjectInputStream ob = new ObjectInputStream(new FileInputStream(ruta)) {
-
-        }

@@ -51,7 +51,6 @@ public class PersonaMain {
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
-                System.out.println(persona1);
                 break;
         }
     }
