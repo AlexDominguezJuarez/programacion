@@ -27,6 +27,7 @@ public class RankingVideojuegoMain {
         public static void main (String[] args)  {
             //FUNCIONES Y VARIABLES
             Scanner in = new Scanner(System.in);
+            Validadores notaCorrecta=new Validadores();
 
             double pesoJuego;
 
@@ -64,7 +65,14 @@ public class RankingVideojuegoMain {
                         System.out.println("¿En que plataforma lo juegas?");
                         plaformaJuego = in.nextLine();
                         System.out.println("¿Que calificacion le das al juego?");
+
                         notaJuego = in.nextInt();
+                        try {
+                            notaCorrecta.validarNumero(notaJuego);
+                        } catch (Excepciones.NotaInvalidaException e) {
+                            break;
+                        }
+
                         System.out.println("Pulse 1 si el juego es fisico\nPulse 2 si el juego es digital");
                         eleccion2 = in.nextInt();
                         switch (eleccion2) {
@@ -112,14 +120,27 @@ public class RankingVideojuegoMain {
                         System.out.println("Introduce el nombre del videojuego");
                         in.nextLine();
                         buscarNombre = in.nextLine();
+                        boolean encontrado = false;
 
-                        for (Videojuego buscarVideojuego : listaVideojuegos) {
-                            if (buscarVideojuego.getNombre().equals(buscarNombre)) {
-                                listaVideojuegos.remove(buscarVideojuego);
-                                System.out.println("Videojuego eliminado del ranking con exito");
+
+                        for (int i = 0; i < listaVideojuegos.size(); i++) {
+                            if (listaVideojuegos.get(i).getNombre().equalsIgnoreCase(buscarNombre)) {
+                                listaVideojuegos.remove(i);
+                                System.out.println("Videojuego eliminado del ranking con éxito");
+                                encontrado = true;
+                                break;
                             }
                         }
-                        break;
+
+
+                if (encontrado = false) {
+                    try {
+                        throw new Excepciones.JuegoNoEncontradoException("No se encontró el videojuego: " + buscarNombre);
+                    } catch (Excepciones.JuegoNoEncontradoException error) {
+                        System.out.println("Error: " + error.getMessage());
+                    }
+                }
+                break;
                     case 4:
                         VideojuegoOutput guardarVideojuego = new VideojuegoOutput();
                         try {
