@@ -1,4 +1,4 @@
-package TEMA7.EJERCICIOS.EJERCICIOVIDEOJUEGO;
+/*package TEMA7.EJERCICIOS.EJERCICIOVIDEOJUEGO;
 
 import java.io.*;
 import java.lang.runtime.SwitchBootstraps;
@@ -164,3 +164,4 @@ public class RankingVideojuegoMain {
         try(ObjectInputStream ob = new ObjectInputStream(new FileInputStream(ruta)) {
 
         }
+*/

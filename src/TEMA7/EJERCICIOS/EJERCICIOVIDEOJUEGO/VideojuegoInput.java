@@ -1,4 +1,4 @@
-package TEMA7.EJERCICIOS.EJERCICIOVIDEOJUEGO;
+/*package TEMA7.EJERCICIOS.EJERCICIOVIDEOJUEGO;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -14,4 +14,4 @@ public class VideojuegoInput implements Serializable {
 
 
 
-}
+}*/
