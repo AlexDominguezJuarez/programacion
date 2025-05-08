@@ -1,4 +1,4 @@
-package TEMA8;
+package TEMA8.EJEMPLOS;
 import java.sql.*;
 public class EjemploJDBC {
     public static void main(String[] args){
