@@ -11,7 +11,7 @@ public class PersonaOutput {
 
     public void abrir() throws IOException {
 
-        file = new FileOutputStream("persona.dat");
+        file = new FileOutputStream("C:\\Users\\Lenovo\\Documents\\CURSO\\PROGRAMACION\\ARCHIVOS_EJEMPLO\\persona.dat");
         output = new ObjectOutputStream(file);
     }
 

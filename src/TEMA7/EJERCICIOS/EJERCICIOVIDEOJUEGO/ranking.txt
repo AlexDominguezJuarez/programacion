@@ -1,0 +1,4 @@
+Videojuego{nombre='The legend of zelda', plataforma='wii+', nota=10}
+Videojuego{nombre='Mario kart', plataforma='nintendo', nota=9}
+Videojuego{nombre='Minecraft', plataforma='movil', nota=9}
+Videojuego{nombre='Mortal kombat', plataforma='playstation 4', nota=8}

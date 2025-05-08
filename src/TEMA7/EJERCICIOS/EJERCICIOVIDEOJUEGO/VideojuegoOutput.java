@@ -12,7 +12,7 @@ public class VideojuegoOutput implements Serializable {
     //Abrir fichero
     public void abrir() throws IOException {
 
-        file = new FileOutputStream("/home/aledomjua/IdeaProjects/programacion/src/TEMA7/FICHEROS_EJERCICIOS/ranking.dat");
+        file = new FileOutputStream("C:\\Users\\Lenovo\\IdeaProjects\\programacion\\src\\TEMA7\\EJERCICIOS\\EJERCICIOVIDEOJUEGO\\ranking.ser");
         output = new ObjectOutputStream(file);
     }
 
