@@ -41,6 +41,8 @@ public class ejercicioRepaso {
         menu();
             int eleccion=in.nextInt();
 
+
+
         switch (eleccion){
             case 1:
                 sentenciaSQL="SELECT * FROM Profesor;";
@@ -83,7 +85,21 @@ public class ejercicioRepaso {
                 }
                 break;
             case 4:
+                sentenciaSQL="SELECT Casa.nombre AS nombre_casa, COUNT(Estudiante.id_estudiante) AS numero_estudiantes\n" +
+                             "FROM Casa " +
+                             "LEFT JOIN Estudiante ON Casa.id_casa = Estudiante.id_casa " +
+                             "GROUP BY Casa.id_casa, Casa.nombre " +
+                             "ORDER BY Casa.nombre;";
 
+                sentencia = con2.prepareStatement(sentenciaSQL);
+
+                resultados = sentencia.executeQuery();
+
+                while(resultados.next()){
+                    String numeroAlumnos = resultados.getString("numero_estudiantes");
+                    String nombreCasa = resultados.getString("nombre_casa");
+                    System.out.println("Nombre de la casa: " + nombreCasa + "   Numero de alumnos: "+numeroAlumnos);
+                }
                 break;
             case 5:
                 sentenciaSQL="SELECT AVG(calificacion) AS media,MAX(calificacion) AS maxima FROM Estudiante_Asignatura WHERE id_asignatura=2;";
@@ -95,7 +111,7 @@ public class ejercicioRepaso {
                 while(resultados.next()){
                     String media = resultados.getString("media");
                     String maxima = resultados.getString("maxima");
-                    System.out.println("Nota media: " + media + " / Nota maxima: "+maxima);
+                    System.out.println("Nota media: " + media + "  Nota maxima: "+maxima);
                 }
                 break;
             case 6:
@@ -167,15 +183,32 @@ public class ejercicioRepaso {
                 }
                 break;
             case 12:
-                break;
-            case 13:
-                sentenciaSQL="UPDATE Casa SET ";
+                sentenciaSQL="INSERT INTO Estudiante(nombre,apellido,id_casa,anyo_curso,fecha_nacimiento) VALUES('Nymphadora','Tonks',4,7,'1973-11-25');";
 
                 sentencia = con2.prepareStatement(sentenciaSQL);
 
-                resultados = sentencia.executeQuery();
+                int filasAfectadas = sentencia.executeUpdate();
 
-                System.out.println("Estudiante eliminado");
+                if (filasAfectadas > 0) {
+                    System.out.println("Se insertó el nuevo estudiante de forma correcta");
+                } else {
+                    System.out.println("No se insertó ningún estudiante");
+                }
+
+                break;
+            case 13:
+                sentenciaSQL = "UPDATE Casa SET id_jefe = 4 WHERE nombre = 'Hufflepuff'";
+
+                sentencia = con2.prepareStatement(sentenciaSQL);
+
+                filasAfectadas = sentencia.executeUpdate();
+
+                if (filasAfectadas > 0) {
+                    System.out.println("Se actualizó el jefe de la casa 'Hufflepuff'.");
+                } else {
+                    System.out.println("No se encontró la casa 'Hufflepuff' o no se realizó ninguna actualización.");
+                }
+
                 break;
             case 14:
                 sentenciaSQL="DELETE FROM Estudiante WHERE nombre='Tom' and apellido'Riddle';";
@@ -188,12 +221,74 @@ public class ejercicioRepaso {
 
                 break;
             case 15:
+                sentenciaSQL="SELECT Estudiante.nombre AS nombre_estudiante,Estudiante.apellido,Casa.nombre AS nombre_casa FROM Estudiante INNER JOIN Casa ON Estudiante.id_casa=Casa.id_casa;";
+
+                sentencia= con2.prepareStatement(sentenciaSQL);
+
+                resultados=sentencia.executeQuery();
+
+                while(resultados.next()){
+                    String apellido = resultados.getString("apellido");
+                    String nombre = resultados.getString("nombre_estudiante");
+                    String nombreCasa=resultados.getString("nombre_casa");
+                    System.out.println("Estudiante: " + nombre + "   "+apellido+" Casa: "+nombreCasa);
+                }
                 break;
             case 16:
+                sentenciaSQL="SELECT Estudiante.nombre AS nombre_estudiante,Mascota.nombre AS nombre_mascota,Asignatura.nombre AS nombre_asignatura FROM Estudiante " +
+                        "LEFT JOIN Mascota ON Estudiante.id_estudiante=Mascota.id_estudiante " +
+                        "INNER JOIN Estudiante_Asignatura ON Estudiante_Asignatura.id_estudiante=Estudiante.id_estudiante " +
+                        "INNER JOIN Asignatura ON Asignatura.id_asignatura=Estudiante_Asignatura.id_asignatura;";
+
+                sentencia= con2.prepareStatement(sentenciaSQL);
+
+                resultados=sentencia.executeQuery();
+
+                while(resultados.next()){
+                    String nombreMascota= resultados.getString("nombre_mascota");
+                    String nombreEstudiante = resultados.getString("nombre_estudiante");
+                    String nombreAsignatura=resultados.getString("nombre_asignatura");
+                    System.out.println("Estudiante: " + nombreEstudiante + "   Asignatura: "+nombreAsignatura+"   Mascota: "+nombreMascota);
+                }
                 break;
             case 17:
+
+                sentenciaSQL="SELECT Estudiante.nombre AS nombre_estudiante, Estudiante.apellido AS apellido_estudiante FROM Estudiante " +
+                        "INNER JOIN Estudiante_Asignatura ON Estudiante.id_estudiante=Estudiante_Asignatura.id_estudiante " +
+                        "INNER JOIN Asignatura ON Asignatura.id_asignatura=Estudiante_Asignatura.id_asignatura " +
+                        "WHERE Asignatura.nombre='Encantamientos' AND Estudiante_Asignatura.calificacion>(" +
+                        "SELECT AVG(Estudiante_Asignatura.calificacion) FROM Estudiante_Asignatura " +
+                        "INNER JOIN Asignatura ON Estudiante_Asignatura.id_asignatura=Asignatura.id_asignatura " +
+                        "WHERE Asignatura.nombre= 'Encantamientos');";
+
+                sentencia= con2.prepareStatement(sentenciaSQL);
+
+                resultados=sentencia.executeQuery();
+
+                while(resultados.next()){
+                    String apellido = resultados.getString("apellido_estudiante");
+                    String nombre = resultados.getString("nombre_estudiante");
+                    System.out.println("Estudiante: " + nombre + " "+apellido);
+                }
+
+
                 break;
             case 18:
+                sentenciaSQL="SELECT Casa.nombre AS nombre_casa FROM Casa " +
+                        "INNER JOIN Estudiante ON Casa.id_casa = Estudiante.id_casa " +
+                        "INNER JOIN Estudiante_Asignatura ON Estudiante.id_estudiante = Estudiante_Asignatura.id_estudiante\n" +
+                        "GROUP BY Casa.id_casa, Casa.nombre " +
+                        "HAVING AVG(Estudiante_Asignatura.calificacion) > 7;";
+
+                sentencia= con2.prepareStatement(sentenciaSQL);
+
+                resultados=sentencia.executeQuery();
+
+                while(resultados.next()){
+                    String nombreCasa = resultados.getString("nombre_casa");
+                    System.out.println("Nombre de la casa: " + nombreCasa);
+                }
+
                 break;
         }
     }catch (SQLException e) {
