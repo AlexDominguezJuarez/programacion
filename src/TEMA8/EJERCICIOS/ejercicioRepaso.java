@@ -1,4 +1,4 @@
-package TEMA8;
+package TEMA8.EJERCICIOS;
 
 
 import java.sql.*;
