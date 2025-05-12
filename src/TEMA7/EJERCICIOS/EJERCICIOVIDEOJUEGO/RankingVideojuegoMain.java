@@ -156,7 +156,7 @@ public class RankingVideojuegoMain {
                 case 6:
 
                     try {
-                        FileWriter file = new FileWriter("C:\\Users\\Lenovo\\IdeaProjects\\programacion\\src\\TEMA7\\EJERCICIOS\\EJERCICIOVIDEOJUEGO\\ranking.txt");
+                        FileWriter file = new FileWriter("/home/aledomjua/IdeaProjects/programacion/src/TEMA7/EJERCICIOS/EJERCICIOVIDEOJUEGO/ranking.txt");
 
                         BufferedWriter output = new BufferedWriter(file);
                         for (Videojuego recorrerArraylist : listaVideojuegos) {

@@ -59,7 +59,7 @@ public class VideojuegoInput implements Serializable {
                 videojuego = (Videojuego) input.readObject();
 
 
-                System.out.println("contacto leido correctamente");
+                System.out.println("Ranking cargado al 100%");
 
 
 
